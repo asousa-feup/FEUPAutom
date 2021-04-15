@@ -331,6 +331,7 @@ begin
 end;
 
 
+
 function SearchVarInSGVars(const VarName:string) : integer;
 // Returns line in SGVars, -1 Not Found
 var

@@ -8,7 +8,7 @@
       <Unit0>
         <Filename Value="FeupAutom.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="12"/>
         <CursorPos X="23" Y="15"/>
         <UsageCount Value="226"/>
@@ -20,14 +20,13 @@
         <ComponentName Value="FMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="37"/>
-        <CursorPos Y="13"/>
+        <TopLine Value="518"/>
+        <CursorPos Y="549"/>
         <UsageCount Value="226"/>
-        <Bookmarks Count="4">
+        <Bookmarks Count="3">
           <Item0 Y="1147" ID="5"/>
           <Item1 Y="1159" ID="4"/>
-          <Item2 Y="1099" ID="1"/>
-          <Item3 Y="2787" ID="9"/>
+          <Item2 Y="2787" ID="9"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit1>
@@ -65,10 +64,15 @@
       <Unit5>
         <Filename Value="structuredtext2pas.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="579"/>
-        <CursorPos X="13" Y="589"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="332"/>
+        <CursorPos Y="334"/>
         <UsageCount Value="226"/>
+        <Bookmarks Count="1">
+          <Item0 Y="334" ID="1"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="MMTimer.pas"/>
@@ -131,10 +135,9 @@
         <ComponentName Value="FormG7"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="12"/>
-        <TopLine Value="1799"/>
-        <CursorPos X="3" Y="1644"/>
+        <TopLine Value="5246"/>
+        <CursorPos X="20" Y="5256"/>
         <UsageCount Value="226"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -530,119 +533,118 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3852" Column="21" TopLine="3821"/>
+        <Caret Line="4239" Column="98" TopLine="4208"/>
       </Position1>
       <Position2>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3859" Column="27" TopLine="3828"/>
+        <Caret Line="4248" Column="38" TopLine="4217"/>
       </Position2>
       <Position3>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3864" Column="50" TopLine="3833"/>
+        <Caret Line="4249" Column="41" TopLine="4218"/>
       </Position3>
       <Position4>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3865" Column="50" TopLine="3834"/>
+        <Caret Line="4252" Column="45" TopLine="4221"/>
       </Position4>
       <Position5>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4230" Column="98" TopLine="4199"/>
+        <Caret Line="5411" Column="10" TopLine="5380"/>
       </Position5>
       <Position6>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4231" Column="98" TopLine="4200"/>
       </Position6>
       <Position7>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4239" Column="98" TopLine="4208"/>
+        <Caret Line="3872" Column="80" TopLine="3848"/>
       </Position7>
       <Position8>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4248" Column="38" TopLine="4217"/>
       </Position8>
       <Position9>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4249" Column="41" TopLine="4218"/>
+        <Caret Line="242" Column="31" TopLine="212"/>
       </Position9>
       <Position10>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="4252" Column="45" TopLine="4221"/>
+        <Caret Line="3075" Column="30" TopLine="3047"/>
       </Position10>
       <Position11>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="5411" Column="10" TopLine="5380"/>
+        <Caret Line="444" Column="15" TopLine="426"/>
       </Position11>
       <Position12>
         <Filename Value="G7Draw.pas"/>
+        <Caret Line="1644" Column="3" TopLine="1637"/>
       </Position12>
       <Position13>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3872" Column="80" TopLine="3848"/>
       </Position13>
       <Position14>
         <Filename Value="G7Draw.pas"/>
+        <Caret Line="5238" TopLine="5207"/>
       </Position14>
       <Position15>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="242" Column="31" TopLine="212"/>
+        <Caret Line="444" Column="15" TopLine="426"/>
       </Position15>
       <Position16>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="3075" Column="30" TopLine="3047"/>
+        <Caret Line="1774" TopLine="1739"/>
       </Position16>
       <Position17>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="444" Column="15" TopLine="426"/>
       </Position17>
       <Position18>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="1644" Column="3" TopLine="1637"/>
+        <Caret Line="139" Column="15" TopLine="109"/>
       </Position18>
       <Position19>
         <Filename Value="G7Draw.pas"/>
+        <Caret Line="239" Column="22" TopLine="209"/>
       </Position19>
       <Position20>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="5238" TopLine="5207"/>
+        <Caret Line="258" Column="25" TopLine="228"/>
       </Position20>
       <Position21>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="444" Column="15" TopLine="426"/>
+        <Caret Line="444" Column="23" TopLine="414"/>
       </Position21>
       <Position22>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="1774" TopLine="1739"/>
+        <Caret Line="643" Column="13" TopLine="612"/>
       </Position22>
       <Position23>
         <Filename Value="G7Draw.pas"/>
+        <Caret Line="1539" Column="11" TopLine="1508"/>
       </Position23>
       <Position24>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="139" Column="15" TopLine="109"/>
+        <Caret Line="444" Column="15" TopLine="426"/>
       </Position24>
       <Position25>
-        <Filename Value="G7Draw.pas"/>
-        <Caret Line="239" Column="22" TopLine="209"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="46" Column="42" TopLine="37"/>
       </Position25>
       <Position26>
-        <Filename Value="G7Draw.pas"/>
-        <Caret Line="258" Column="25" TopLine="228"/>
+        <Filename Value="main.pas"/>
       </Position26>
       <Position27>
-        <Filename Value="G7Draw.pas"/>
-        <Caret Line="444" Column="23" TopLine="414"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="549" TopLine="518"/>
       </Position27>
       <Position28>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="643" Column="13" TopLine="612"/>
+        <Caret Line="447" Column="15" TopLine="428"/>
       </Position28>
       <Position29>
         <Filename Value="G7Draw.pas"/>
-        <Caret Line="1539" Column="11" TopLine="1508"/>
+        <Caret Line="5256" Column="20" TopLine="5246"/>
       </Position29>
       <Position30>
-        <Filename Value="G7Draw.pas"/>
-        <Caret Line="444" Column="15" TopLine="426"/>
+        <Filename Value="structuredtext2pas.pas"/>
+        <Caret Line="53" Column="10" TopLine="33"/>
       </Position30>
     </JumpHistory>
     <RunParams>
