@@ -1,0 +1,2598 @@
+object FIOLeds: TFIOLeds
+  Left = 351
+  Height = 862
+  Top = 0
+  Width = 183
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSizeToolWin
+  Caption = 'IO Leds'
+  ClientHeight = 862
+  ClientWidth = 183
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object GroupBox7: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 158
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 6
+    object Label7: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup7: TRadioGroup
+      Tag = 6
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Image7: TImage
+      Left = 60
+      Height = 14
+      Top = 0
+      Width = 14
+      Transparent = True
+    end
+  end
+  object Label32: TLabel
+    Left = 9
+    Height = 13
+    Top = 0
+    Width = 38
+    Caption = 'Unforce'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label33: TLabel
+    Left = 40
+    Height = 13
+    Top = 28
+    Width = 48
+    Caption = 'Force to 1'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label34: TLabel
+    Left = 26
+    Height = 13
+    Top = 14
+    Width = 48
+    Caption = 'Force to 0'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label35: TLabel
+    Left = 13
+    Height = 13
+    Top = 13
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label36: TLabel
+    Left = 13
+    Height = 13
+    Top = 25
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label37: TLabel
+    Left = 13
+    Height = 13
+    Top = 37
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label38: TLabel
+    Left = 29
+    Height = 13
+    Top = 27
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label39: TLabel
+    Left = 29
+    Height = 13
+    Top = 39
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label40: TLabel
+    Left = 45
+    Height = 13
+    Top = 39
+    Width = 2
+    Caption = '|'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelConnected: TLabel
+    Left = 86
+    Height = 13
+    Top = 4
+    Width = 78
+    Caption = 'LabelConnected'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 55
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object Image1: TImage
+      Left = 60
+      Height = 14
+      Top = -1
+      Width = 14
+      Transparent = True
+    end
+    object Label1: TLabel
+      Left = 76
+      Height = 15
+      Top = -2
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup1: TRadioGroup
+      Left = 0
+      Height = 30
+      Top = -10
+      Width = 60
+      Align = alCustom
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclTopToBottomThenLeftToRight
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 23
+      ClientWidth = 56
+      ColumnLayout = clVerticalThenHorizontal
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      Font.Quality = fqDraft
+      ItemIndex = 0
+      Items.Strings = (
+        ' '
+        ' '
+        ' '
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 72
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup2: TRadioGroup
+      Tag = 1
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Image2: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 88
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object Image3: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label3: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup3: TRadioGroup
+      Tag = 2
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 103
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+    object Image4: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label4: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup4: TRadioGroup
+      Tag = 3
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 124
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    object Image5: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label5: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup5: TRadioGroup
+      Tag = 4
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox6: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 141
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 5
+    object Image6: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label6: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup6: TRadioGroup
+      Tag = 5
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox8: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 175
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 7
+    object Image8: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label8: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup8: TRadioGroup
+      Tag = 7
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox9: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 196
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 8
+    object Image9: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label9: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup9: TRadioGroup
+      Tag = 8
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox10: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 213
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 9
+    object Image10: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label10: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup10: TRadioGroup
+      Tag = 9
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox11: TGroupBox
+    Left = 0
+    Height = 26
+    Top = 230
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 19
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 10
+    object Image11: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label11: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup11: TRadioGroup
+      Tag = 10
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox12: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 248
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 11
+    object Image12: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label12: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup12: TRadioGroup
+      Tag = 11
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox13: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 268
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 12
+    object Image13: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label13: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup13: TRadioGroup
+      Tag = 12
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox14: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 285
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 13
+    object Image14: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label14: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup14: TRadioGroup
+      Tag = 13
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox15: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 302
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 14
+    object Image15: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label15: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup15: TRadioGroup
+      Tag = 14
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox16: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 319
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 15
+    object Image16: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label16: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup16: TRadioGroup
+      Tag = 15
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox17: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 344
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 16
+    object Image17: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label17: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%Q2.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup17: TRadioGroup
+      Tag = 16
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox18: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 361
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 17
+    object Image18: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label18: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup18: TRadioGroup
+      Tag = 17
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox19: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 378
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 18
+    object Image19: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label19: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup19: TRadioGroup
+      Tag = 18
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox20: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 395
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 19
+    object Image20: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label20: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup20: TRadioGroup
+      Tag = 19
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox21: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 416
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 20
+    object Image21: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label21: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup21: TRadioGroup
+      Tag = 20
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox22: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 433
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 21
+    object Image22: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label22: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup22: TRadioGroup
+      Tag = 21
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox23: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 450
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 22
+    object Image23: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label23: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup23: TRadioGroup
+      Tag = 22
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox24: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 467
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 23
+    object Image24: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label24: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup24: TRadioGroup
+      Tag = 23
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox25: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 488
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 24
+    object Image25: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label25: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup25: TRadioGroup
+      Tag = 24
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox26: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 505
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 25
+    object Image26: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label26: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup26: TRadioGroup
+      Tag = 25
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox27: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 522
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 26
+    object Image27: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label27: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup27: TRadioGroup
+      Tag = 26
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox28: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 539
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 27
+    object Image28: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label28: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup28: TRadioGroup
+      Tag = 27
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox29: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 560
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 28
+    object Image29: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label29: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup29: TRadioGroup
+      Tag = 28
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox30: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 577
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 29
+    object Image30: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label30: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup30: TRadioGroup
+      Tag = 29
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox31: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 592
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 30
+    object Image31: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label31: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup31: TRadioGroup
+      Tag = 30
+      Left = 0
+      Height = 30
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 23
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox32: TGroupBox
+    Left = 0
+    Height = 18
+    Top = 611
+    Width = 174
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 11
+    ClientWidth = 170
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -1
+    Font.Name = 'Times New Roman'
+    ParentBidiMode = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 31
+    object Image32: TImage
+      Left = 60
+      Height = 14
+      Top = -2
+      Width = 14
+      Transparent = True
+    end
+    object Label41: TLabel
+      Left = 76
+      Height = 16
+      Top = -1
+      Width = 92
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = '%I1.x'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object RadioGroup32: TRadioGroup
+      Tag = 31
+      Left = 0
+      Height = 35
+      Top = -12
+      Width = 60
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 28
+      ClientWidth = 56
+      Columns = 3
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -1
+      Font.Name = 'Times New Roman'
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        ''
+        ''
+      )
+      OnClick = RadioGroupsClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object CBShowPercentNames: TCheckBox
+    Left = 103
+    Height = 19
+    Top = 30
+    Width = 61
+    Caption = '%Names'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    OnClick = CBShowPercentNamesClick
+    ParentFont = False
+    TabOrder = 32
+  end
+  object ImageListLedsOut: TImageList
+    left = 96
+    Bitmap = {
+      4C69020000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000808080FF8080
+      80FF808000FF808000FF808000FF808000FF808000FF808080FF808080FF0000
+      00000000000000000000000000000000000000000000808080FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FF808000FF808000FF8080
+      80FF0000000000000000000000000000000000000000808080FF808000FF8080
+      00FF808000FF808000FFFFFFFFFFFFFFFFFFFFFFFFFF808000FF808000FF8080
+      80FF00000000000000000000000000000000808080FF808000FF808000FF8080
+      00FF808000FF808000FF808000FFFFFFFFFFFFFFFFFFFFFFFFFF808000FF8080
+      00FF808080FF000000000000000000000000808080FF808000FF808000FF8080
+      00FF808000FF808000FF808000FF808000FFFFFFFFFFFFFFFFFF808000FF8080
+      00FF808080FF000000000000000000000000808080FF808000FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FFFFFFFFFF808000FF8080
+      00FF808080FF000000000000000000000000808080FF808000FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FF808000FF808000FF8080
+      00FF808080FF000000000000000000000000808080FF808000FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FF808000FF808000FF8080
+      00FF808080FF000000000000000000000000808080FF808080FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FF808000FF808000FF8080
+      80FF808080FF00000000000000000000000000000000808080FF808000FF8080
+      00FF808000FF808000FF808000FF808000FF808000FF808000FF808000FF8080
+      80FF000000000000000000000000000000000000000000000000808080FF8080
+      80FF808000FF808000FF808000FF808000FF808000FF808080FF808080FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000808080FF8080
+      80FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF808080FF808080FF0000
+      00000000000000000000000000000000000000000000808080FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF8080
+      80FF0000000000000000000000000000000000000000808080FF00FF00FF00FF
+      00FF00FF00FF00FF00FFFFFFFFFFFFFFFFFFFFFFFFFF00FF00FF00FF00FF8080
+      80FF00000000000000000000000000000000808080FF00FF00FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FFFFFFFFFFFFFFFFFFFFFFFFFF00FF00FF00FF
+      00FF808080FF000000000000000000000000808080FF00FF00FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FFFFFFFFFFFFFFFFFF00FF00FF00FF
+      00FF808080FF000000000000000000000000808080FF00FF00FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FFFFFFFFFF00FF00FF00FF
+      00FF808080FF000000000000000000000000808080FF00FF00FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF
+      00FF808080FF000000000000000000000000808080FF00FF00FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF
+      00FF808080FF000000000000000000000000808080FF808080FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF8080
+      80FF808080FF00000000000000000000000000000000808080FF00FF00FF00FF
+      00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF8080
+      80FF000000000000000000000000000000000000000000000000808080FF8080
+      80FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF808080FF808080FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object ImageListLedsIn: TImageList
+    left = 56
+    Bitmap = {
+      4C69020000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000808080FF8080
+      80FF008080FF008080FF008080FF008080FF008080FF808080FF808080FF0000
+      00000000000000000000000000000000000000000000808080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FF008080FF008080FF8080
+      80FF0000000000000000000000000000000000000000808080FF008080FF0080
+      80FF008080FF008080FFFFFFFFFFFFFFFFFFFFFFFFFF008080FF008080FF8080
+      80FF00000000000000000000000000000000808080FF008080FF008080FF0080
+      80FF008080FF008080FF008080FFFFFFFFFFFFFFFFFFFFFFFFFF008080FF0080
+      80FF808080FF000000000000000000000000808080FF008080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FFFFFFFFFFFFFFFFFF008080FF0080
+      80FF808080FF000000000000000000000000808080FF008080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FFFFFFFFFF008080FF0080
+      80FF808080FF000000000000000000000000808080FF008080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FF008080FF008080FF0080
+      80FF808080FF000000000000000000000000808080FF008080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FF008080FF008080FF0080
+      80FF808080FF000000000000000000000000808080FF808080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FF008080FF008080FF8080
+      80FF808080FF00000000000000000000000000000000808080FF008080FF0080
+      80FF008080FF008080FF008080FF008080FF008080FF008080FF008080FF8080
+      80FF000000000000000000000000000000000000000000000000808080FF8080
+      80FF008080FF008080FF008080FF008080FF008080FF808080FF808080FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000808080FF8080
+      80FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF808080FF808080FF0000
+      00000000000000000000000000000000000000000000808080FF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF8080
+      80FF0000000000000000000000000000000000000000808080FF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFF00FFFFFF8080
+      80FF00000000000000000000000000000000808080FF00FFFFFF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFF00FF
+      FFFF808080FF000000000000000000000000808080FF00FFFFFF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFFFFFFFFFFFFFFFFFF00FFFFFF00FF
+      FFFF808080FF000000000000000000000000808080FF00FFFFFF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFFFFFFFFFF00FFFFFF00FF
+      FFFF808080FF000000000000000000000000808080FF00FFFFFF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+      FFFF808080FF000000000000000000000000808080FF00FFFFFF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+      FFFF808080FF000000000000000000000000808080FF808080FF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF8080
+      80FF808080FF00000000000000000000000000000000808080FF00FFFFFF00FF
+      FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF8080
+      80FF000000000000000000000000000000000000000000000000808080FF8080
+      80FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF808080FF808080FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+end

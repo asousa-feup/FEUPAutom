@@ -1,0 +1,33 @@
+object FG7Editor: TFG7Editor
+  Left = 181
+  Height = 551
+  Top = 138
+  Width = 793
+  Caption = 'Editor'
+  ClientHeight = 551
+  ClientWidth = 793
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  LCLVersion = '1.2.4.0'
+  object BOk: TButton
+    Left = 704
+    Height = 25
+    Top = 488
+    Width = 75
+    Caption = 'Ok'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object BCancel: TButton
+    Left = 620
+    Height = 25
+    Top = 488
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 0
+  end
+end

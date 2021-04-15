@@ -1,0 +1,2618 @@
+object FormG7: TFormG7
+  Left = 539
+  Height = 547
+  Top = 124
+  Width = 748
+  Anchors = [akTop, akLeft, akBottom]
+  Caption = 'Grafcet Draw Grid'
+  ClientHeight = 527
+  ClientWidth = 748
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Icon.Data = {
+    3E01000000000100010010101000010004002801000016000000280000001000
+    0000200000000100040000000000000000000000000000000000000000000000
+    0000820000008B0100007D03010095000600770015006D022200690724005F06
+    390036147400331580002B178D000D1ABC00011BC7000B1BC7000821C2000000
+    0000FBBBBBBBFFFFFFFFBBBBBBBBFFFFFFFFFBBBBBBFFFFFFFFFFFBBBBBFFFFB
+    BFFFFBDBFBFFFFFBBBFF048FFFFFFFBBBBBBFFF0FFFFFBBBBBBB00FF00FFFFBB
+    BBBBF021F000FFFBBBBFFF271FF00FCEBFBFFFFEA5FFF069FFFFBBBBEF100F30
+    0FFFFBBBFFFFF0FFFFFFBBBBBBBFFF00FFFFFBBBFFFFFFFFFFFFFFBFFFFFFFFF
+    FFFF80FF000000FF000081FF0000C1E700008BE300001FC00000EF80000033C0
+    000088E10000C6450000E38F0000044700008FBF000001CF00008FFF0000DFFF
+    0000
+  }
+  Menu = G7_MainMenu
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  OnMouseWheel = FormMouseWheel
+  LCLVersion = '2.0.10.0'
+  object Label3: TLabel
+    Left = -97
+    Height = 13
+    Top = 139
+    Width = 11
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = '2'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = -97
+    Height = 17
+    Top = 109
+    Width = 11
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = '1'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = -137
+    Height = 15
+    Top = 56
+    Width = 30
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = 'Page:'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Splitter1: TSplitter
+    Left = 479
+    Height = 504
+    Top = 0
+    Width = 10
+    Align = alRight
+    Beveled = True
+    ResizeAnchor = akRight
+  end
+  object StatusBarG7: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 504
+    Width = 748
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Panels = <    
+      item
+        Width = 300
+      end    
+      item
+        Width = 50
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object Panel1Left: TPanel
+    Left = 0
+    Height = 504
+    Top = 0
+    Width = 479
+    Align = alClient
+    ClientHeight = 504
+    ClientWidth = 479
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentFont = False
+    TabOrder = 1
+    object ScrollBox1: TScrollBox
+      Left = 1
+      Height = 502
+      Top = 1
+      Width = 477
+      HorzScrollBar.Page = 456
+      VertScrollBar.Page = 481
+      Align = alClient
+      ClientHeight = 481
+      ClientWidth = 456
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 0
+      object ImageG7: TImage
+        Left = -2
+        Height = 4096
+        Top = -2
+        Width = 2048
+        OnMouseDown = ImagesMouseDown
+        OnMouseMove = ImageG7MouseMove
+        OnMouseUp = ImageG7MouseUp
+        PopupMenu = G7_PopupMenu
+      end
+      object LabelZones: TLabel
+        Left = 211
+        Height = 260
+        Top = 32
+        Width = 438
+        Caption = 'All the code from page 3 is produced before page 2, (etc) last page is 0.'#13#10'Special "Zone1", "Zone2", ... are hooks to interfere with produced variables.'#13#10'Just name a step "Zone1", etc.'#13#10'Zones are on a given page of code. Only one zone of the same name can exist at this time.'#13#10'Sequence of the code produced:'#13#10'1. “Zone1”'#13#10'2. If  INIT  activate initial steps'#13#10'3. “Zone2”'#13#10'4. Calculate Transitions'#13#10'5. “Zone3”'#13#10'6. For Fired Transitions, deactivate steps before'#13#10'7. “Zone4”'#13#10'8. For Fired Transitions, activate steps after; *_T:=0'#13#10'9. “Zone5”'#13#10'10. (otional) Reset all outputs'#13#10'11.“Zone6”'#13#10'12. At each tenth of sec, and for active steps, increment *_T '#13#10'13.“Zone7”'#13#10'14. For active steps, execute actions'#13#10'15.“Zone8”'
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        ParentColor = False
+        ParentFont = False
+        Visible = False
+      end
+      object Memo1: TMemo
+        Left = 275
+        Height = 478
+        Top = 13
+        Width = 207
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Lines.Strings = (
+          'Memo1'
+        )
+        ParentFont = False
+        TabOrder = 0
+        Visible = False
+      end
+    end
+  end
+  object Label10: TLabel
+    Left = 28
+    Height = 41
+    Top = 100
+    Width = 58
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = 'Zoom '#13#10'Font'#13#10'Code Area Size'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Label9: TLabel
+    Left = 199
+    Height = 62
+    Top = 79
+    Width = 10
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = '0'#13#10'1'#13#10'2'#13#10'3'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Label1: TLabel
+    Left = 37
+    Height = 13
+    Top = 117
+    Width = 26
+    Anchors = [akTop, akRight]
+    Caption = 'Font:'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = -14
+    Height = 13
+    Top = 149
+    Width = 146
+    Anchors = []
+    Caption = 'Transition + Action code area:'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel2Right: TPanel
+    Left = 489
+    Height = 504
+    Top = 0
+    Width = 259
+    Align = alRight
+    ClientHeight = 504
+    ClientWidth = 259
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentFont = False
+    TabOrder = 3
+    object PairSplitRight: TPairSplitter
+      Cursor = crVSplit
+      Left = 1
+      Height = 502
+      Top = 1
+      Width = 257
+      Align = alClient
+      Color = clBtnFace
+      Position = 187
+      SplitterType = pstVertical
+      object PairSplitUp: TPairSplitterSide
+        Cursor = crArrow
+        Left = 0
+        Height = 187
+        Top = 0
+        Width = 257
+        ClientWidth = 257
+        ClientHeight = 187
+        OnMouseEnter = PairSplitUpMouseEnter
+        OnResize = PairSplitUpResize
+        object TBPage: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 213
+          Height = 68
+          Top = 71
+          Width = 17
+          Max = 3
+          OnChange = TBPageChange
+          Orientation = trVertical
+          PageSize = 1
+          Position = 0
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 0
+        end
+        object ToolBar1: TToolBar
+          Left = 0
+          Height = 28
+          Top = 0
+          Width = 257
+          ButtonHeight = 26
+          ButtonWidth = 50
+          EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+          Flat = False
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 22
+          object BBStop_GR7: TBitBtn
+            Left = 3
+            Height = 26
+            Hint = 'F10'
+            Top = 2
+            Width = 60
+            Caption = 'Stop'
+            Enabled = False
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              F6060000424DF606000000000000360000002800000018000000180000000100
+              180000000000C006000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000801C00801C00801C00801C00801C00801C00801C00801C00801C
+              00801C00801C00801C00801C00801C00801C00801C0000000000000000000000
+              0000000000000000000000000000801C00F6D79CB84500B84500B84500B84500
+              B84500B84500B84500B84500B84500B84500B84500B84500B84500801C000000
+              00000000000000000000000000000000000000000000801C00F6D79CF6AA57F6
+              A54AF6A03EF69C33F69728F6921DF68E14F6890CF68404F68000F68000F68000
+              B84500801C00000000000000000000000000000000000000000000000000801C
+              00F6D79CF6AF64F6AA57F6A54AF6A03EF69C33F69728F6921DF68E14F6890CF6
+              8404F68000F68000B84500801C00000000000000000000000000000000000000
+              000000000000801C00F6D79CF6B472F6AF64F6AA57F6A54AF6A03EF69C33F697
+              28F6921DF68E14F6890CF68404F68000B84500801C0000000000000000000000
+              0000000000000000000000000000801C00F6D79CF6B880F6B472F6AF64F6AA57
+              F6A54AF6A03EF69C33F69728F6921DF68E14F6890CF68404B84500801C000000
+              00000000000000000000000000000000000000000000801C00F6D79CF6B880F6
+              B880F6B472F6AF64F6AA57F6A54AF6A03EF69C33F69728F6921DF68E14F6890C
+              B84500801C00000000000000000000000000000000000000000000000000801C
+              00F6D79CF6B880F6B880F6B880F6B678F6B16BF6AC5DF6A750F6A03EF69C33F6
+              9728F6921DF68E14B84500801C00000000000000000000000000000000000000
+              000000000000801C00F6D79CF6B880F6B880F6B880F6B880F6B678F6B16BF6AC
+              5DF6A750F6A344F69E38F6992DF69523B84500801C0000000000000000000000
+              0000000000000000000000000000801C00F6D79CF6B880F6B880F6B880F6B880
+              F6B880F6B678F6B16BF6AC5DF6A750F6A344F69E38F6992DB84500801C000000
+              00000000000000000000000000000000000000000000801C00F6D79CF6B880F6
+              B880F6B880F6B880F6B880F6B880F6B678F6B16BF6AC5DF6A750F6A344F69E38
+              B84500801C00000000000000000000000000000000000000000000000000801C
+              00F6D79CF6B880F6B880F6B880F6B880F6B880F6B880F6B880F6B678F6B16BF6
+              AC5DF6A750F6A344B84500801C00000000000000000000000000000000000000
+              000000000000801C00F6D79CF6B880F6B880F6B880F6B880F6B880F6B880F6B8
+              80F6B880F6B678F6B16BF6AC5DF6A750B84500801C0000000000000000000000
+              0000000000000000000000000000801C00F6D79CF6B880F6B880F6B880F6B880
+              F6B880F6B880F6B880F6B880F6B880F6B678F6B16BF6AC5DB84500801C000000
+              00000000000000000000000000000000000000000000801C00F6D79CF6D79CF6
+              D79CF6D79CF6D79CF6D79CF6D79CF6D79CF6D79CF6D79CF6D79CF6D79CF6D79C
+              F6D79C801C00000000000000000000000000000000000000000000000000801C
+              00801C00801C00801C00801C00801C00801C00801C00801C00801C00801C0080
+              1C00801C00801C00801C00801C00000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000
+            }
+            OnClick = BBStop_GR7Click
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+          end
+          object BIniRun: TBitBtn
+            Left = 63
+            Height = 26
+            Top = 2
+            Width = 60
+            Caption = 'IniRun'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              F6060000424DF606000000000000360000002800000018000000180000000100
+              180000000000C006000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000801C0089240200000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000000000000000000000801C00F6D7
+              9CB84500801C0000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000F39528F39528
+              000000801C00F6D79CF6A53FB84500801C000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000F39528F39528000000801C00F6D79CF6A747F6982AB84500801C00000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000801C00F6D79CF6AB4FF69C34F6
+              982AB84500801C00000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000F39528F39528000000801C00F6D7
+              9CF6AF57F69F3DF69C34F39528B84500801C0000000000000000000000000000
+              0000000000000000000000000000000000000000F39528F39528F39528F39528
+              000000801C00F6D79CF6B160F6A447F69F3DF69C33F29327B84500801C000000
+              00000000000000000000000000000000F39528F39528F39528000000F39528F3
+              9528F39528F39528000000801C00F6D79CF6B569F6A752F6A447F69F3DF69C33
+              F09227B84500801C00000000000000000000000000000000F6B26EF6B26EF395
+              28000000F39528F39528F39528F39528000000801C00F6D79CF6BA76F6AD62F6
+              AA56F6A54AF6A041F69D36F09229B84500801C00000000000000000000000000
+              F6B26EF6B26EF39528000000F39528F39528F39528F39528000000801C00F6D7
+              9CF6BF86F6B880F6B880F6B77FF6B679F2AC68B84500801C0000000000000000
+              0000000000000000F39528F39528F39528000000F39528F39528F39528F39528
+              000000801C00F6D79CF6BF86F6B880F6B880F6B880F2B277B84500801C000000
+              00000000000000000000000000000000000000000000000000000000F39528F3
+              9528F39528F39528000000801C00F6D79CF6BF86F6B880F6B880F3B47AB84500
+              801C000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000F39528F39528000000801C00F6D79CF6BF86F6B880F6
+              B880B84500801C00000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000000000000000000000801C00F6D7
+              9CF6BF86F6B880B84500801C0000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000F39528F39528
+              000000801C00F6D79CF6BF86B84500801C000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000F39528F39528000000801C00F6D79CB84500801C00000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000801C00801C0000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000
+            }
+            OnClick = BIniRunClick
+            ParentFont = False
+            TabOrder = 1
+          end
+          object BBRun_GR7: TBitBtn
+            Left = 123
+            Height = 26
+            Hint = 'F9'
+            Top = 2
+            Width = 76
+            Caption = 'Continue'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              F6060000424DF606000000000000360000002800000018000000180000000100
+              180000000000C006000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000801C00892402
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000080
+              1C00F6D79CB84500801C00000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000801C00F6D79CF6A53FB84500801C0000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000801C00F6D79CF6A747F6982AB84500801C
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000801C00F6D79CF6AB4F
+              F69C34F6982AB84500801C000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000080
+              1C00F6D79CF6AF57F69F3DF69C34F39528B84500801C00000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000801C00F6D79CF6B160F6A447F69F3DF69C33F29327B8450080
+              1C00000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000801C00F6D79CF6B569F6A752F6A447F69F
+              3DF69C33F09227B84500801C0000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000801C00F6D79CF6BA76
+              F6AD62F6AA56F6A54AF6A041F69D36F09229B84500801C000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000080
+              1C00F6D79CF6BD80F6B26EF6AD63F6AA56F6A54BF6A041F69D37F2932BB84500
+              801C000000000000000000000000000000000000000000000000000000000000
+              00000000000000801C00F6D79CF6BF86F6B67AF6B26EF6AD62F6AA56F6A54BF6
+              A041F69D37F3962CB84500801C00000000000000000000000000000000000000
+              000000000000000000000000000000801C00F6D79CF6BF86F6B880F6B77AF6B2
+              6EF6AD63F6AA57F6A64CF39E40B84500801C0000000000000000000000000000
+              0000000000000000000000000000000000000000000000801C00F6D79CF6BF86
+              F6B880F6B880F6B67AF6B26EF6AD63F2A552B84500801C000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000080
+              1C00F6D79CF6BF86F6B880F6B880F6B77FF6B679F2AC68B84500801C00000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000801C00F6D79CF6BF86F6B880F6B880F6B880F2B277B8450080
+              1C00000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000801C00F6D79CF6BF86F6B880F6B880F3B4
+              7AB84500801C0000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000801C00F6D79CF6BF86
+              F6B880F6B880B84500801C000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000080
+              1C00F6D79CF6BF86F6B880B84500801C00000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000801C00F6D79CF6BF86B84500801C0000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000801C00F6D79CB84500801C000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000801C00801C00
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000
+            }
+            OnClick = BBRun_GR7Click
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+          end
+        end
+        object BStepsPage2: TButton
+          Tag = 1
+          Left = 54
+          Height = 16
+          Hint = 'Append in code area reset steps of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Caption = '1'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BStepsPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+        end
+        object BStepsPage3: TButton
+          Tag = 2
+          Left = 70
+          Height = 16
+          Hint = 'Append in code area reset steps of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Caption = '2'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BStepsPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+        end
+        object BPrintTransPage0: TButton
+          Left = 151
+          Height = 16
+          Hint = 'Append in code area reset transitions of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Anchors = [akTop, akRight]
+          Caption = '0'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BPrintTransPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+        end
+        object BPrintTransPage1: TButton
+          Tag = 1
+          Left = 167
+          Height = 16
+          Hint = 'Append in code area reset transitions of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Anchors = [akTop, akRight]
+          Caption = '1'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BPrintTransPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
+        end
+        object BPrintTransPage3: TButton
+          Tag = 3
+          Left = 199
+          Height = 16
+          Hint = 'Append in code area reset transitions of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Anchors = [akTop, akRight]
+          Caption = '3'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BPrintTransPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+        end
+        object BPrintTransPage2: TButton
+          Tag = 2
+          Left = 183
+          Height = 16
+          Hint = 'Append in code area reset transitions of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Anchors = [akTop, akRight]
+          Caption = '2'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BPrintTransPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 6
+        end
+        object BStepsPage1: TButton
+          Left = 38
+          Height = 16
+          Hint = 'Append in code area reset steps of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Caption = '0'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BStepsPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 7
+        end
+        object EditDebugVar: TEdit
+          Left = 132
+          Height = 21
+          Top = 141
+          Width = 110
+          Anchors = [akTop, akRight]
+          Color = clInfoBk
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnChange = EditDebugVarChange
+          ParentFont = False
+          TabOrder = 8
+          Text = 'DebugVar'
+        end
+        object EditAnimation: TEdit
+          AnchorSideRight.Side = asrBottom
+          Left = 232
+          Height = 21
+          Top = 3
+          Width = 19
+          Anchors = [akRight]
+          Enabled = False
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 9
+          Text = '|'
+        end
+        object LabelPage1: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 235
+          Height = 19
+          Top = 87
+          Width = 9
+          Anchors = [akTop, akRight]
+          Caption = '1'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelPage0: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 235
+          Height = 19
+          Top = 70
+          Width = 9
+          Anchors = [akTop, akRight]
+          Caption = '0'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelPage2: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 235
+          Height = 19
+          Top = 102
+          Width = 9
+          Anchors = [akTop, akRight]
+          Caption = '2'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelPage3: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 235
+          Height = 19
+          Top = 120
+          Width = 9
+          Anchors = [akTop, akRight]
+          Caption = '3'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object TBFontCodeEditor: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 127
+          Height = 16
+          Hint = 'Font Size for Code Editing Area'
+          Top = 122
+          Width = 80
+          Max = 8
+          Min = -6
+          OnChange = TBFontCodeEditorChange
+          PageSize = 1
+          Position = 0
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 10
+        end
+        object TBFont: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 127
+          Height = 16
+          Hint = 'Font Size'
+          Top = 96
+          Width = 80
+          Max = 5
+          Min = -5
+          OnChange = TBFontChange
+          PageSize = 1
+          Position = 0
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 11
+        end
+        object TBZoom: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 126
+          Height = 16
+          Hint = 'General Zoom Level'
+          Top = 109
+          Width = 81
+          Frequency = 10
+          Max = 200
+          Min = 20
+          OnChange = TBZoomChange
+          PageSize = 5
+          Position = 75
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 12
+        end
+        object TBCodeAreaSize: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 126
+          Height = 16
+          Hint = 'Code Area Size'
+          Top = 83
+          Width = 80
+          Max = 5
+          Min = 1
+          OnChange = TBCodeAreaSizeChange
+          PageSize = 1
+          Position = 3
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 13
+        end
+        object TBStepHeight: TTrackBar
+          AnchorSideRight.Side = asrBottom
+          Left = 127
+          Height = 16
+          Hint = 'Step+Code Height'
+          Top = 68
+          Width = 80
+          Max = 18
+          Min = 3
+          OnChange = TBStepHeightChange
+          PageSize = 1
+          Position = 6
+          Anchors = [akTop, akRight]
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 14
+        end
+        object CBBarNum: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 131
+          Width = 60
+          Caption = 'Bar Num'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 16
+        end
+        object CBCursors: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 162
+          Width = 57
+          Caption = 'Cursors'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 17
+          Visible = False
+        end
+        object CBConfirmDel: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 146
+          Width = 75
+          Caption = 'Confirm Del'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentFont = False
+          TabOrder = 19
+        end
+        object Label2: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 90
+          Height = 17
+          Top = 122
+          Width = 37
+          Anchors = [akTop, akRight]
+          Caption = 'Code:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object CBRoundStates: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 99
+          Width = 51
+          Caption = 'Round'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = CBRoundStatesClick
+          ParentFont = False
+          TabOrder = 20
+        end
+        object LabelCodeAreaSize: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 85
+          Height = 17
+          Top = 83
+          Width = 42
+          Anchors = [akTop, akRight]
+          Caption = 'Width:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object CBDebugStuff: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 115
+          Width = 51
+          Caption = 'Debug'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnChange = CBDebugStuffChange
+          OnClick = CBDebugStuffClick
+          ParentFont = False
+          TabOrder = 21
+        end
+        object LabelZoom: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 86
+          Height = 17
+          Top = 109
+          Width = 41
+          Anchors = [akTop, akRight]
+          Caption = 'Zoom:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object ToolBar: TToolBar
+          Left = 0
+          Height = 39
+          Top = 28
+          Width = 257
+          ButtonHeight = 35
+          ButtonWidth = 40
+          DropDownWidth = 12
+          EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+          Flat = False
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Indent = 2
+          ParentFont = False
+          TabOrder = 23
+          object SPStepTransition: TSpeedButton
+            Left = 4
+            Height = 35
+            Hint = 'Create Steps & Transitions Click to place [or edit] a Step or Transition'
+            Top = 2
+            Width = 40
+            Caption = 'Steps'
+            Down = True
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              1A070000424D1A070000000000001A0300000C00000020002000010008000000
+              00000000000000990000CC0000FF0000003300333300663300993300CC3300FF
+              3300006600336600666600996600CC6600FF6600009900339900669900999900
+              CC9900FF990000CC0033CC0066CC0099CC00CCCC00FFCC0000FF0033FF0066FF
+              0099FF00CCFF00FFFF00000033330033660033990033CC0033FF003300333333
+              3333663333993333CC3333FF3333006633336633666633996633CC6633FF6633
+              009933339933669933999933CC9933FF993300CC3333CC3366CC3399CC33CCCC
+              33FFCC3300FF3333FF3366FF3399FF33CCFF33FFFF3300006633006666006699
+              0066CC0066FF0066003366333366663366993366CC3366FF3366006666336666
+              666666996666CC6666FF6666009966339966669966999966CC9966FF996600CC
+              6633CC6666CC6699CC66CCCC66FFCC6600FF6633FF6666FF6699FF66CCFF66FF
+              FF66000099330099660099990099CC0099FF0099003399333399663399993399
+              CC3399FF3399006699336699666699996699CC6699FF66990099993399996699
+              99999999CC9999FF999900CC9933CC9966CC9999CC99CCCC99FFCC9900FF9933
+              FF9966FF9999FF99CCFF99FFFF990000CC3300CC6600CC9900CCCC00CCFF00CC
+              0033CC3333CC6633CC9933CCCC33CCFF33CC0066CC3366CC6666CC9966CCCC66
+              CCFF66CC0099CC3399CC6699CC9999CCCC99CCFF99CC00CCCC33CCCC66CCCC99
+              CCCCCCCCCCFFCCCC00FFCC33FFCC66FFCC99FFCCCCFFCCFFFFCC0000FF3300FF
+              6600FF9900FFCC00FFFF00FF0033FF3333FF6633FF9933FFCC33FFFF33FF0066
+              FF3366FF6666FF9966FFCC66FFFF66FF0099FF3399FF6699FF9999FFCC99FFFF
+              99FF00CCFF33CCFF66CCFF99CCFFCCCCFFFFCCFF00FFFF33FFFF66FFFF99FFFF
+              CCFFFFFFFFFF0D0D0D1A1A1A2828283535354343435050505D5D5D6B6B6B7878
+              78868686939393A1A1A1AEAEAEBBBBBBC9C9C9D6D6D6E4E4E4F1F1F100000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000000000000000000000000000ACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACAC0505050505050505ACACACAC
+              ACACACACACACACACACACACACACACACACACACACAC0505050505050505ACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACAC0505ACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              0505050505050505050505ACACACACACACACACACACACACACACACACACACACACAC
+              0505050505050505050505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505ACACACACACACAC0505ACACACACACACACACACACACACACACACACACACACACAC
+              0505050505050505050505ACACACACACACACACACACACACACACACACACACACACAC
+              0505050505050505050505ACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+              ACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC
+            }
+            GroupIndex = 1
+            Margin = 1
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object SPConnector: TSpeedButton
+            Left = 44
+            Height = 35
+            Hint = 'Connect & Deconnect Start DRAG on an existing step or transition RELEASE over existing step or transition Downwards => Connect Upwards => Delete Connection Objects on the same row can NOT be connected'
+            Top = 2
+            Width = 40
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              28070000424D2807000000000000DE030000280000001F0000001F0000000100
+              080001000000E0030000120B0000120B0000EA00000000000000000000003300
+              00006600000099000000CC000000FF0000000033000033330000663300009933
+              0000CC330000FF33000000660000336600006666000099660000CC660000FF66
+              000000990000339900006699000099990000CC990000FF99000000CC000033CC
+              000066CC000099CC0000CCCC0000FFCC000000FF000033FF000066FF000099FF
+              0000CCFF0000FFFF000000003300330033006600330099003300CC003300FF00
+              330000333300333333006633330099333300CC333300FF333300006633003366
+              33006666330099663300CC663300FF6633000099330033993300669933009999
+              3300CC993300FF99330000CC330033CC330066CC330099CC3300CCCC3300FFCC
+              330000FF330033FF330066FF330099FF3300CCFF3300FFFF3300000066003300
+              66006600660099006600CC006600FF0066000033660033336600663366009933
+              6600CC336600FF33660000666600336666006666660099666600CC666600FF66
+              660000996600339966006699660099996600CC996600FF99660000CC660033CC
+              660066CC660099CC6600CCCC6600FFCC660000FF660033FF660066FF660099FF
+              6600CCFF6600FFFF660000009900330099006600990099009900CC009900FF00
+              990000339900333399006633990099339900CC339900FF339900006699003366
+              99006666990099669900CC669900FF6699000099990033999900669999009999
+              9900CC999900FF99990000CC990033CC990066CC990099CC9900CCCC9900FFCC
+              990000FF990033FF990066FF990099FF9900CCFF9900FFFF99000000CC003300
+              CC006600CC009900CC00CC00CC00FF00CC000033CC003333CC006633CC009933
+              CC00CC33CC00FF33CC000066CC003366CC006666CC009966CC00CC66CC00FF66
+              CC000099CC003399CC006699CC009999CC00CC99CC00FF99CC0000CCCC0033CC
+              CC0066CCCC0099CCCC00CCCCCC00FFCCCC0000FFCC0033FFCC0066FFCC0099FF
+              CC00CCFFCC00FFFFCC000000FF003300FF006600FF009900FF00CC00FF00FF00
+              FF000033FF003333FF006633FF009933FF00CC33FF00FF33FF000066FF003366
+              FF006666FF009966FF00CC66FF00FF66FF000099FF003399FF006699FF009999
+              FF00CC99FF00FF99FF0000CCFF0033CCFF0066CCFF0099CCFF00CCCCFF00FFCC
+              FF0000FFFF0033FFFF0066FFFF0099FFFF00CCFFFF00FFFFFF000D0D0D001A1A
+              1A00282828003535350043434300505050005D5D5D006B6B6B00787878008686
+              860093939300A1A1A100AEAEAE00BBBBBB00C9C9C900D6D6D600E4E4E400F1F1
+              F1001EAC01AC00001EAC01AC000004AC000300ACAC000DAC000300ACAC0007AC
+              01AC000004AC000300ACAC000DAC000300ACAC0007AC01AC000004AC000300AC
+              AC000DAC000300ACAC0007AC01AC000002AC05000BAC050007AC01AC000004AC
+              000300ACAC000DAC000300ACAC0007AC01AC000004AC000300ACAC000DAC0003
+              00ACAC0007AC01AC0000001FACACACAC05ACAC6B232323236BACACACACACACAC
+              05ACACACACACACB3ACACAC00000004AC000305ACAC00052308AC000305ACAC00
+              04AC0004238FACAC0000001FACACAC050505AC23232323ACACACACACD0ACAC05
+              0505ACACD0ACAC232323AC000000001FACACAC050505AC2323232323ACACACAC
+              B4C2AC050505ACD0B4ACACAC2323AC000000001FACACAC050505AC2323AC2323
+              ACACACACE9B4C2050505D0B4C9ACACAC232323000000001FACACAC050528AC8F
+              ACACAC238FACACACACE9B46E0528B4C9ACACACACAC232300000003AC030505AC
+              022305AC0005E9B46EB4C90006AC01230123000003AC030505AC022306AC0003
+              28B4910003AC00068FACACAC238F000003AC030504AC032305AC0005D0B44BB4
+              C20002AC02230004AC2323AC000003AC030504AC022305AC0003D0B44B000205
+              0003B4C2AC00052301AC000003AC030503AC032304AC0003E9B4C90003050003
+              E9B4C200042301AC01AC0000001FACACAC050505ACACAC238FACACACACACB4C9
+              AC050505ACE9B42323232323AC000000001FACACACAC05ACACACACB3ACACACAC
+              ACACACACACAC05ACACACAC6B232323236B00000004AC000305ACAC000DAC0003
+              05ACAC0007AC01AC00000003AC000000050009AC070006AC01AC0000001F00AC
+              ACACACACACAC00ACACACACACACAC00ACACACACACACAC00ACACACACACAC000000
+              001F00ACACACACACACAC00ACACACACACACAC00ACACACACACACAC00ACACACACAC
+              AC000000001F00ACACACACACACAC00ACACACACACACAC00ACACACACACACAC00AC
+              ACACACACAC000000001F00ACACACACACACAC00ACACACACACACAC00ACACACACAC
+              ACAC00ACACACACACAC000000001F00ACACACACACACAC00ACACACACACACAC00AC
+              ACACACACACAC00ACACACACACAC000000001F00ACACACACACACAC00ACACACACAC
+              ACAC00ACACACACACACAC00ACACACACACAC0000000003AC000000050009AC0700
+              06AC01AC00001EAC01AC0000
+            }
+            GroupIndex = 1
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object SPEdit: TSpeedButton
+            Left = 84
+            Height = 35
+            Hint = 'Edit & Move'
+            Top = 2
+            Width = 35
+            Caption = 'E'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Glyph.Data = {
+              3A0F0000424D3A0F00000000000036000000280000001F0000001F0000000100
+              200000000000040F000064000000640000000000000000000000CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00FF000000FF000000FF0000FFFF0000FFCCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00FF000000FF000000FF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCC
+              CC0000000000CCCCCC00000000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF00
+              0000FF0000FFFF0000FFFF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC000000
+              0000CCCCCC00000000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF00
+              00FFFF0000FFFF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC0000000000CCCC
+              CC00000000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF00
+              00FFFF0000FFFF0000FFFF0000FF0000000000000000000000FF000000FF0000
+              00FF000000FF000000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF00
+              00FFCCCCCC00CCCCCC00CCCCCC00CCCCCC0000000000CCCCCC00000000FFCCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF0000FFCCCC
+              CC00CCCCCC00CCCCCC00CCCCCC0000000000CCCCCC00000000FFCCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF0000FFCCCCCC00CCCC
+              CC00CCCCCC00CCCCCC0000000000CCCCCC00000000FFCCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00000000000000
+              0000000000FF000000FF000000FF000000FFCCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00FF000000CCCCCC00FF0000FFCCCCCC00CCCCCC0000000000CCCCCC000000
+              00FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000CCCCCC00FF00
+              00FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF00
+              00FFFF0000FFFF0000FFCCCCCC00CCCCCC0000000000CCCCCC00000000FFCCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF00
+              00FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFFF00
+              00FFFF0000FFFF0000FFFF0000FFFF0000FF00000000000000FF000000FF0000
+              00FF000000FFFF000000FF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF00
+              00FFFF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFFF0000FFFF00
+              00FFFF0000FFFF0000FFFF0000FFCCCCCC00000000FFCCCCCC00CCCCCC00FF00
+              0000FF000000FF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF00
+              00FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFCCCC
+              CC00CCCCCC0000000000CCCCCC00000000FFCCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFCCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00FF000000CCCCCC00FF0000FFCCCCCC00CCCC
+              CC000000000000000000000000FF000000FF000000FF000000FFCCCCCC00CCCC
+              CC00FF000000CCCCCC00FF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF00
+              0000FF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF00
+              00FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC000000000000000000000000FF000000FF000000FF0000
+              00FF000000FFCCCCCC00CCCCCC00CCCCCC00FF000000FF000000FF0000FFFF00
+              00FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC0000000000CCCCCC00000000FFCCCCCCFFCCCCCCFFCCCCCCFF0000
+              00FFCCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFFF0000FFFF00
+              00FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC0000000000CCCCCC00000000FFCCCCCCFFCCCCCCFFCCCCCCFF000000FFCCCC
+              CC00CCCCCC00FF000000FF000000FF0000FFFF0000FFFF0000FFFF0000FFCCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC000000
+              0000CCCCCC00000000FFCCCCCCFFCCCCCCFFCCCCCCFF000000FFCCCCCC00CCCC
+              CC00FF000000FF000000FF0000FFFF0000FFFF0000FFFF0000FFCCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00000000000000
+              0000000000FF000000FF000000FF000000FF000000FFCCCCCC00CCCCCC00CCCC
+              CC00FF000000FF000000FF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00FF00
+              0000FF000000FF0000FFFF0000FFCCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCC
+              CC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00
+            }
+            GroupIndex = 1
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object SPJump: TSpeedButton
+            Left = 119
+            Height = 35
+            Hint = 'Jumps (Start Jump and End Jump) Please place the Start_Jump in step line and End_Jump in transition line Connected jumps should have same label (only one start_jump and end_jump)'
+            Top = 2
+            Width = 35
+            Caption = 'Jmp Up'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            GroupIndex = 1
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object SPUpLink: TSpeedButton
+            Left = 189
+            Height = 35
+            Hint = 'Uplinks'
+            Top = 2
+            Width = 35
+            Caption = 'Up'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            GroupIndex = 1
+            Visible = False
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object SPComment: TSpeedButton
+            Left = 154
+            Height = 35
+            Hint = 'Comments'
+            Top = 2
+            Width = 35
+            Caption = '(**)'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            GroupIndex = 1
+            OnClick = SPModesClick
+            ShowHint = True
+            ParentFont = False
+            ParentShowHint = False
+          end
+          object ImageHelpToolBar: TImage
+            Left = 4
+            Height = 35
+            Hint = 'Press for Help'
+            Top = 37
+            Width = 32
+            OnClick = ImageHelpCodeAreaClick
+            ParentShowHint = False
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B47726170686963C61A000089504E47
+              0D0A1A0A0000000D4948445200000025000000280806000000790033DD000018
+              897A5458745261772070726F66696C6520747970652065786966000078DACD9A
+              577624399245FFB18A5902B4580E6000CE991DCCF2E73E045394E8EA2EF1D1C9
+              CC0C32E8E1EE30F184C1DDF9BFFFBDEE7FF85353AE2E97D6EBA8D5F3278F3CE2
+              E49BEE3F7F3EAFC1E7F7FFFB13CBD7EFC22FDF77F1DB87226F255ED3E7C77ABE
+              8E9FBC5F7E7CA0E5AFF7D72FDF77CDBECED3BF4EF4F58B6F274CBA72E49BAFE3
+              FAD78952FCBC1FBE7E76E3EB7333FFB49CAF7F63BF9BF7E1EBA05FFF9C1BC1D8
+              85F3A5E8E2492179FEAFBA4AFAFC9BFCCBFC1F53E4A0C0D7E4E7F2DE1FBF1F3B
+              77ECF783F7FDBB5FC5CECFAFF7D32F43E17CFD3AA0FE2A465FEF87F2FBB17B11
+              FAF98EC28F2BFFE2172B85E67FFEF353ECEEDDFDDEF359DDCC954855F7B5A86F
+              4B79DF71E02294E97DACF2D5F857F8BEBDAFC157678946C636D95C7C990B2344
+              A27D430E3BCC70C379AF168C5BCCF1C4C66B8C16D37BAFA71647B4A414647D85
+              1B5B1A69BBD4C98D91B5C4DBF1FBBD8477DDF1AE67A173E51D3832064E1694CD
+              5F7FB9DF7BF3AF7C7D3FD1BDAA83107CFFC489B2E0BEA26A9ADB50E6F43F4791
+              9070BF625A5E7CDF97FBA96EFC4F894D64B0BC30771638FDFA9C6295F0A3B6D2
+              CB73E2B8E2B3FB14BD0F6D7F9D801071EDC2CD50D139F81A520935F816630B81
+              3876F233B9F398725C64209412777097DCA454494E8FBA369F69E11D1B4BFCBC
+              0DB4BC06A9A9919A9126C9CAB9503F2D776A689654B22BA5D4D24A2FA3CC9A6A
+              AEA5D6DAAA306AB6D4722BADB6D67A1B6DF6D4732FBDF6D67B1F7D8E38121056
+              461DCD8D3EC698938B4E4E3DF9F4E48839575C69E555565D6DF535D634CAC7B2
+              15ABD6ACDBB0B9E34E9BF6DF7537B7FB1E7B9E7028A5934F39F5B4D3CF38F352
+              6B37DD7CCBADB7DD7EC79DDFB316BEDAF617590BBFCADC1F672D7C654D19CBEF
+              B8F6236BBCDDDAB75304C14951CEC858CC818C376580828ECA99EF21E7A8CC29
+              677E449AA244B2168A92B383324606F309B1DCF03D773F32F787797325FFA9BC
+              C57F9539A7D4FD1399734ADD57E67E9BB7DFC9DA9E8F51D24B90BA5031F5E902
+              6CB7F919FB14C1FD8D57F7774FF05F77A2F9498D25374B1D44FED89967875CBA
+              8994C7C93D6CEBB74C40B88C4BCEA627E79524534C75CC21D2044B40F47E40C8
+              46EDA6BDAD4D14012533FBED3DE5B5230D58FDDA8BE471B5BC4F68B66AE543B9
+              361805186F14E9B5EAC1225756B13C7C26FD678F57C6675DA8CA8EA7F8623AA7
+              508AADCF457DD41EE6A97384627BA9E272EFCB77964141A60ECFF45AD31E76E7
+              6EC39F9960AF464916EED56AE831EF94ACD35EB3FBD24760A1FE4EEA0A740F2D
+              DDEEA8A5D393DEB80386BAFA0E446D178A6A7CDFEEE69FDE8D9937F4C118D7C9
+              4BD14E67E57B7BB17B549057CAE09DEAB0A2F721CB25E8D5AF01BBF02D44F8DE
+              A7B1DE91BD4F2E7CFABBB1CDCDB8775FDF6E8B433EB7C5AF01F576F3BE7DACE3
+              EF2ED7F65DACFA9E7A47E91BF2EF3B89598735303B9C5ED74936CF6816CB8961
+              651643E06F9DFDB47613A9DA378E1C0C18A91074A44D95E34DE81B7554DB9C6E
+              2F96594B6A6305D66E71AF3C6F22BD64201C4A6EEFD633816888B1DBEBCD69C7
+              2344E013BB8CBD019FE81DDC5500B04E8DA6659D8328A1C6B97A6F339F97971A
+              EF4A7B6D7EDA2BD90215CC720EACAF5B6DDEDAAE8EF8CCFD8FF4DA65C53511BD
+              12E3AEE79E4463C4C515CB1A541EF8D99E7A33A1BA6D0F9EDF4032596259F780
+              E5EB5CE1516E2BBE7C558AE753066907EA877A0B79D766A5340ABF8CA936B052
+              0FE52C5A0E9DF4114A4ED15C647DC0A9053542E2B31D40AD06EFAC3EB8DD5DF3
+              4DA91942F0D49CABBDBFA570A6230D473AD6EE07A165294DC430C44073CF3A02
+              F8BC27A57D20A238C83BA0C0590E183E6BE3BE6940A4C32485A3E5A2ABA1DADC
+              5AFDE4BCA085EE7BD9193C2E0538E03E6EA243ADA4E38F38043EA28E68C09ABB
+              3A07FC176B1618065471151EEADCB20823501CB583152722FA32FD396EA14328
+              A4403517E13E6C679EC517D68EB6CD75C0837481AB23AEA102566771BB9660E7
+              74D79C5CF4C9E04F67D144410DC391F42E3D71EFBA2B7C357939AE8F5CE87310
+              27953B17A93D2519F9FCCDE7E8E0F7C9D7870F1EC6BA9E23E9FD331DCDDC6EA5
+              4F850E3B5061699CB22D9DB9F3BA23DF00819766C48D8A4FD72363002CE83034
+              7A29A795EAB4E94E2F90E2E6BF2630C9400C14B9CA85C78D329DE548968388D3
+              023A1A32DDC156E8F4273200A3D4BA4A80EEBF540032FD963D1697DC09E83E30
+              791064F132C7B6431FF578566835711978625136272DFAC16EC968C8B327C86C
+              461D719B7C0A15612A5A5CD9852BD60DA95ADD8FF447659543F75677188B7A50
+              7A51AA21B9B5EF30424673D85C7D67E13C6516811E84480C48C47CA46151B22C
+              399FD36F3A2DD03229D316B08B128017A9889079165763D946E456C86BAD5802
+              8D44EEC639E044A472E91FE200F043242024DD59FA079837428BFC166AC658F4
+              7BF3025FA483C231A96FEA76D1BF09BC5C9382DBE4F46C0ECA40604B6B4142F0
+              43C142E4B31FAC4C39E43FF76A46282C0752EB466918202E02A10143B15EBF00
+              D2D482C42142E80BD36FE8B661F10B2C964B5F54CA00521AC5E0EE9A8891274F
+              11FA5DAC0F8602CAFAE9ED109407CC1DEA0697ADC40CE66217301F273F610020
+              3F7212E438A0885A38E7D484318B75A01F8AA7FB7DB4DC05886D06A8FE2AC8F7
+              0C8A07D63D88B84A41CCD5FA6281E7BAD372DD1D5E36F4329077C87D8391B8AF
+              4A60134D0F0E521C99462CC69ACDECA2556540A6ACA800A69B3B141617E53872
+              8A78C40351CF461B0229A008F58E0B42F158475B346A4A4012880840C6A993D1
+              7AA98190B463998400093C3CDD4A8C4DA3940A4F291E0304A8C128D7BA2C2E6E
+              9733BCC84CD0C0D040BE9F13DD898864442AAD59AB940F95AE0A871A4E4BBBC1
+              AE1D8D4C1389BF691BCA862E2E9C940AAB92E890F836824D8159BEB1E662E487
+              42061A0336102CA680F96EE5BAFA558350AB289DA9AEA320164905EB3B4983FB
+              F113879EE38307A0B9D43C484AA3D20224B01412E513E22981FCA32D50EE8C71
+              1761848A2ECD55E848EAC38D20CCA27A2A3C84A2E0148BEEE32339DB6E74912F
+              629285FE23702D4E4242B6689D00F4DBA59FAD4EEFE07318CEBF0E06C91F7677
+              15E1BCED78A06080F4156C5D9064C6F6D0CF347ECD70C8512251ABE72C739103
+              94306E240FFA70B44EA5F78D664C15366D9225251BDEA412928B9E423A2AB707
+              B4A7D0E0F339F710D302422A3984A6DC55EE92020B9AF4FCABEFF248C995C934
+              4EAD0A579E00D1BDF559CB90F3092E3C2D4DA1C177C0FDE44F274D74301138D7
+              8354FA7D1F15FA6FF9A013121C0C3A42801475875BA1E1C689E8D89BA1109BC8
+              DFADCEA7A7913A04FA47516B8D26B6B72EFC6E38AB16D02E113536542FAE9B08
+              2D21C9C690BC9A544091B4BBF98074E1B2CC42C76D257BF121EE1D8C40352338
+              E821B07D6E5EDD7C54075FD543D5715F484ED0FE0E813B9F6D2AB10BEC9E489D
+              C5DB818B2C0BE1A5DEA83DEA100EAD0E057F8A0CA655FC088642EE71D39AE998
+              A7510A04B80B2836915183EB8005B7026B131D04EE2141BCAEE3742381EBB4A9
+              532203047BE84C4C04D61C258CF7D0349440014FB73E3DB5CE6F70D7FD7B60A6
+              892175E4AC545DB8079238E8AE57C248ED0128F0CF1DB43E826962B33759467B
+              610F06B6B841B005752CB71D61420FB9C8192103287B8B7C8772BED6B0F43346
+              47F8BB8A277DD79BCF158CB3405724916D93924307E0D26CA03C29CDF896CB52
+              69D1B4BBD01BA6858E294D56BD5600C07CA6B75B80AAD109230678B060F18AE6
+              5E8156867A4128127C04AA540FC5029AE3D70060A8146C00F8A8F72E3B87EDC2
+              B52398C108D0AB1B8DAC215618FDB6176F45838EC3E5A48AE4C80E1CC5BAE3DA
+              A862199264AD42A1F80B0C88A712F00B68273426F78A4A54F0F0450B39487753
+              CB48E77EC6767EA33341304C8E0C01E88B8969F20B8018EF50340B0D22D5B923
+              B500FF6038C804A683AA0E57F706C13B7A9E96BEB88F1EEFAC211A10EB31B3AB
+              B1B4C419744E4B8DBEA0F25409F7CC02ECC38D4011DFE2A8EE76373D886D0A10
+              B1A48C2B84836AA267A2A7194C0C13256EC8D858AA667AB351BB1F51B217396E
+              D749924891BC73ABE490D4F740C56D6AF2FBD4268547E5EFC42FB800C038B51A
+              44F27A4A0681843BA2F49023304587EA4F47D70159A02B5946B4140525972A4A
+              B4E005A7F455833EE9AB8CD7C6FF701C54ED22FE455C17C0C21AA45FC1F02DB7
+              7DF9FB71B81349B80EA9229B2CD1974AA6217FADB1D01790D37138C4AAC1036B
+              ADB4135C0EED4394C00F20A46F349FC0241C568A4D452A0275D46C91CA3D8611
+              A1B317C046D56027074EF050243519ECF4A179988DD5BC7BC2A2E29A151D4861
+              23DE0002352195C1E790CBDD2941FB680607C02764E3A0ED63032E520F2888AD
+              1D8B126486FFF0D5FDFC064C887737B96D7CDE0F718609FE499D09F171C3D6D1
+              7C47CA9E7E0ECDB5CDE22F86083945D55D21215E8446CD001D74820404BD69FA
+              7D347A20C52956D641D9F55906AD0869B4E838F018CC473A7696A93D061AF488
+              EA01CA692F99C0D0936C02269BDC06820587D2AD5B3606F5025857C72BB1C73C
+              A4414E278682DBB52146A0006FBE8FC4C7C7EBA2C75075E2151C48E6384A9D9E
+              809C8DEE076AA647005213E8526931AA189439D8940ECAD0C0420C2D1BDA90C1
+              80F7E9445B12D96494C2B5E6F80CF4033378243BF6F5C093540A780A910A9B6E
+              153F14C07A93410D22BCA11A33BF067B09A314EF6D2C8D3812279834C5F6464C
+              0D0D3E9E38FB1AF39481287AF58484A3BD3A9D0F164280B9515088BEE7FB51D0
+              ADED6729A38AF03325D22C13B127FF2F1F7DA8E9E7227B193826E92DA894C206
+              07B915336024A9D9918A15D3A1A4A3683ACA7D6CEE0ED0DD31023E484504014A
+              3E78508FECC2A8302346815E42130C57A38428528D1041F775699E1037F9237A
+              50D8A485F00E55F3B7A5A1185A0D7EADDAF60010907EC783C9C33D4704BCA230
+              81589505A2E62E6A1720A2F76AD21C27282CB0063CD32840040E0DD4411B3246
+              B4E6E80E23802E1409731BB8B98C7E5D584F2C294C0BA8445851609E44524533
+              A4B05E954902BCA80DCD515C03148EC62BABCAD3D6F3C25EF1CA87EC82B05611
+              84A8D709BC68A36020B0857BA14A0796492021F2EABCC67023448DB108CBB9A1
+              C2131A17C48E0A8177EE82C8A42A7C0CB813500BCE1EFDADEEF20134608CE688
+              25967952C2743CA946DE019774DC6B57F43052853ACFA58C971F242B29391951
+              8CDB3F74C37AB37327856ED0AC42803D82244C78F991FE9376679D28F0FEECBB
+              7A8EAB221DA688C4D4334D16281922020189242C2D9248E11E41421B7CB7BDAA
+              BEE77909F1869FAFDC2D868824815457D28A351547F14BFD50C72FE2E913F1B6
+              516F10107FA4E0FE0383FB0742EB4019F01A126163E735AB1E1984D8919EA224
+              0AC2346830AC59D32CAEC9BE7C9FF7681BE0A789CFC74ED0F06F303BFAA6C4FC
+              A09835D8A678EB4E2C5273EDEA72D4A64844857A920BA19696076A20868EAA81
+              982627E1EAF03F10B5342B7FD6E011EA420A21A57153287F8490F65840DAFEF6
+              C08DFF1267259253366F61A238391AC82650A8DA1AAA0C1AC4A374C2D79CC201
+              0EC810785C72A02D6916B8448BC3D41D397FCC03065DC0A3430FEDCA0F45DE1A
+              4F3025FC9142D5A1E83C55236B8D90DB343B25832C2546141C9C07A8A239716F
+              790E41A066AA0933DE707D8627E72830E9384FFA71F20FB426464939032D08CD
+              90C34D86C9E79430BF06FAF3F8B47CC023A0CB83A6739C27134573347BABE848
+              0427508F4B019B4FEA6596AEF17388DAC86AF1CC3450241A77E1D4C0D6505141
+              7D2601A556E13488A1D0D565392E6FAFCB92887E49641738AFCDF56D3E76D054
+              EBC780AC210A26D6501BBE5EF3F15038C944E8098DAABA0ED618FEB3B9913FB5
+              B3B53DD51143DC4EEB400F7E137292A1EB3E0F4709858BF1D1DE06517EB3CF88
+              8A03ACA16389532C644E5963730472A56686760F388DD7442BE29A02BF769ABB
+              2314F1F7189EA88140D7366F267EE03CDDCB3A49087CB5F14A19E3248CEAB1CA
+              BED788D7C700C0EA2E52163691A00AC95F9A46FDEBA65DDCED0D260DF8214818
+              6E79ECC8971F6279DCDAAF8E72BF739866A99ADC4AB4E619843364F8D166C678
+              B48DDEBE38044B9F817A94E97974B4914B1729C5EF3307E2182F8E0739805C97
+              A2E67C100CA2284168D5A8269AEB08FC892672EFEC2AE987A54328896F416004
+              B43ADAA4207D47C017BF857C550A0C8E95CF44EBEE4137A326E06764009F04B3
+              4F1C68BA23983C13C742CFA1F7F4232D07450D3BDA89926A936A2EF0DD96EF86
+              DEE0A77161CB8EC47518807A1EBABFCD9C2DCCA6EA291A817529AA73AE005041
+              CF102451F059DEE44305E2C0E70D1CC6610F451EBBF030FB4A96533727052281
+              C9F317478FC29D95D2E6DE593175249AD506DECE58D678E8FE4D3C5AF0CF3A72
+              554067C2F35E4BE3FE92C41A4DFDE8A1D9AC592A5ADB7E5E118AC2B482DFF2EE
+              1FD8A479AF3F4E74FB6AF631E1317D60FF9BE6FF6C94CD846539381EFA9A1AB1
+              007EC8B294083C49B1C170C0D7E57E017E7417C6FEB93E235F9263E36AFBE146
+              8A4B1884BDBE998A5DF595EDC456E2AA10A39A35200A28F5A10DAF77173F5C59
+              CBA28C824603BE079F2E1F958BFEC3878C9D3C605931C5CEB4A5D3C99AE1F421
+              55ED49150B1ACA0091777DE60F9436F041D14A847D6059C95157802AA58DE38A
+              8036A48BAA286FA68C4E2218DA8700DD264A1450EC33A313C33EA73D192ECF82
+              3844A015DC928C0274B4401850B421BAC1DF27B3C4F8521D9F6552A9C4C77FC9
+              8ACA695734AE861027DA04D5344E7274834608301375C2B7D9B4FB4438696E2E
+              40502971ADE648075285896A429A35442129E18A02FA949CDA27A8ADCA735B1A
+              4EFFA557F7EF0ED0C32332DEE6975808D4D636C3232461FC4561C66A5808F0A2
+              854329F2E3A6920215042CF3B381C09DAAA3046946ED17261A454008365F392A
+              63CD8D94AA371DF445AD607450D407281B9AF1C30B07510F5EE0828999F6C189
+              21DDAD1D7270A699E66A50602CDADBE1024E737BF2D8462987E32762B3A446E7
+              268A96206B8F22A199D1CDF1EA44072D8CDAC67078BC9C46EAB8EFDB5D92DA27
+              971BA2BB1A8536BC569413D42C08074E056044D1C128E4819CCD15EF5325B655
+              14947190C2CC4E7AFD603CF039B832DCEC265475064D7A653A3C109E2978FA65
+              0D4D1B70FBAC3170EB014FB52107ED6D539068E128F9194141EA594326D44CD5
+              BCFBCFE4DFFD8982D1E49EC6407CD23D29C3E2ACAE486C594F6E680F9E9B001B
+              31742663A94715DA9BB57E5788A102ED3F09C4F14D201ACA296848E09E4ACCBD
+              215B326E4EA68CA569A2B5B509AC71FE4206544DDB50930BCCAAE1CD247D979F
+              03C6B45B341D0455D3CC3FF637B5D19612AAECC4409ABC3698314A9FC71D40BB
+              0763F226D2D17A56A30058313B2406088417DC41A60CE7099A409EB60E45DEA9
+              433FBA86073B7BAA12784055E35D2EAA66E3F3409FD5F24A0EEB1E516D92F3E1
+              09E84830BB1E774B6415475CF06E798FAD470961492E4B87A1780CF786FA9CDB
+              A3A1E4D7C0B3349E6244EA8CB006924EDA5D03F7E6DF82F5C8A0B4076EA989A5
+              708414E3D5C6D2A9417B84B36BC48AF632557B89246DB3DE3106DA8E9B173C96
+              FD9E5B591D3B2919C331D4DAC4922C05D7574FEB9DE240516B729159BE625191
+              B9AC3D52795B3444768C8282D560BA635931317A864C2326FA9B2ED08965BD9C
+              C6F6943C841516A8A96A5F7ABE400F5AAC8BE4FF589B1C3068F4CE97E7455B60
+              3D3572E313790DDB4E22E06F82E37B75BF6C0213A6246D9C2EF8F540ED454EC6
+              DE4C671FEAB8ABA5BD614A7297F23CC8032BE33ACDCB9B1EF889743240BF1543
+              5368D2876107A10CA0138EA6875996FC933AFE09C537D90C05787303B0C12CEA
+              E100380F44DA7A3E26F83114C7A41D0B7892E86310BA1E18917F37505A19793B
+              0EC23E84160600E801499AE0A9A7CF43388819EA848883D79E72468663014C8F
+              E6017790F31CC7349F1C7A461411799D26B6F072FC3C8340757E3DE583A7860A
+              F458C0D81FA26C851E59F8AB02830CAAC938891441550BB9B6BEF96E25B963CE
+              CAC7784380E9CB784BC4558C370588970C68B9F599D1702D6AF6B0646004D780
+              D485F3F53422621432076F8B764EBA764ED03FB7B718B467662950BF21C5F714
+              D692D9A5DFF05FBEBBF76404E486BC30EE4B0F6E991E57B9F59B0A4011A35DB5
+              BFE787A66F4B33A91C421B9ADC907A3B06D32ED92CD31EC6F8AB5BE3EFD5FDC1
+              0154DE6D9FC7027A91EEC9EDC1A7F4076F00149A1961A38E3FD9B17AC209685D
+              C82BAC67307C3B1A09053D4A05233F72AD6FA957C8B024D9D1DEE7EDB22D0C71
+              68C9C9043469460CFDD2E60A05DA6C77891ABBE5339DD69036612E47A5597130
+              75056C482DAAFB90CA22197AB6460F128C0EC54621B006F4B712700D51290DDE
+              267C479BB064EC1CEAD3BF3949D5D82FDB089CEF9A8B58E7F024E894BE7ABAD0
+              E0D3A20770B449DF0F6AF685EA050A94DD1A076C6DE8D71C51994D6DEA3475B1
+              18406240E64C19E271F4AC8B2D0B17F6E5FB8A99486FF6F4295C1451D5F4297D
+              0F1430E235BA6E65654A9865E3B103EE90DE8A7A38997815AF07C7C0982C4FAB
+              42D7CF0F2511812214940C1AB268CB04D4C430E5A0A7A6FEA29170FD1F7A44F3
+              BFFD44F0FB46A2B9FF079E7973F563A734C000000006624B474400FF00FF00FF
+              A0BDA7930000000970485973000012740000127401DE661F780000000774494D
+              4507E404160A2D1186FEA27C000001BE4944415458C3ED984D8A83401085AB87
+              594A10B29B13CC1DAC0B04BC86D964E9A68ED030B8CC66BC461FA173876C7280
+              2C028D17E8D98C5226EAD83F8630D81082C1D62FAFAA5F3F15C61878B5F1062F
+              3856A815EA25A0A494364DD3C98F94D2FA4209174B90525A29A5D30D88088848
+              B8CC79F7013A55157C6E3683E79D9B06B2B2E4F30000AC0BD82CA55AA02998BF
+              E05C149B0595A6A90500B8D5F5E88D8780B745D13B36C688288DDE36ECA9AA7A
+              30DBA2E8299195256C8B02CE4DD3FDC6E7F06BC5800200E854B826490F462905
+              C618A194024484AC2C3BB07BE5E62E12674BD81F8FBD634414ED37223EC7A788
+              A82BD93549406BCD812617032F25BF56D44647C41ED46FC9C4D8EA5CACD1F93F
+              E440443409E4AB9293A36BAD3BF39C03E4EB51CEDBCC1CFF0A050A4A0963FE15
+              0A14A4D4904ABE8DBD589E0A69ECC5948AA5D2FF8BC3BC3C314B17C5126E751D
+              B5744EC97368186344DB5BB1540A86E2F90811E1FB70808FDD4E844279974F6B
+              6DF33C7FD862BE2E972E37212228A59E679E799E5BADF543448ED15F8B5A826F
+              E80BB6046E07D724B93F473CB5D111511091E51BF03DB4AF5222C64B33FEA0EA
+              9B0CA243AD6F5D56A815CA63FC0014663F325740873A0000000049454E44AE42
+              6082
+            }
+            ShowHint = True
+          end
+        end
+        object BStepsPage4: TButton
+          Tag = 3
+          Left = 86
+          Height = 16
+          Hint = 'Append in code area reset steps of a given page (for you to edit latter)'
+          Top = 166
+          Width = 16
+          Caption = '3'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BStepsPage_x_Click
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 24
+        end
+        object BDumpBars: TButton
+          Left = 179
+          Height = 15
+          Top = 179
+          Width = 75
+          Anchors = [akTop, akRight]
+          Caption = 'Dump Bars'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BDumpBarsClick
+          ParentFont = False
+          TabOrder = 25
+          Visible = False
+        end
+        object BCompile: TButton
+          Left = 179
+          Height = 15
+          Top = 166
+          Width = 75
+          Anchors = [akTop, akRight]
+          Caption = 'Info2Compile'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BCompileClick
+          ParentFont = False
+          TabOrder = 26
+          Visible = False
+        end
+        object BDebug: TButton
+          Left = 52
+          Height = 15
+          Top = 179
+          Width = 67
+          Anchors = [akTop, akRight]
+          Caption = 'Debug'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BDebugClick
+          ParentFont = False
+          TabOrder = 27
+          Visible = False
+        end
+        object BDebugActivateRandom: TButton
+          Left = 107
+          Height = 15
+          Top = 179
+          Width = 69
+          Anchors = [akTop, akRight]
+          Caption = 'Actv+-RND'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BDebugActivateRandomClick
+          ParentFont = False
+          TabOrder = 28
+          Visible = False
+        end
+        object BDumpObjs: TButton
+          Left = 108
+          Height = 15
+          Top = 166
+          Width = 67
+          Anchors = [akTop, akRight]
+          Caption = 'Dump Objs'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = BDumpObjsClick
+          ParentFont = False
+          TabOrder = 29
+          Visible = False
+        end
+        object LabelSteps: TLabel
+          Left = 3
+          Height = 13
+          Top = 167
+          Width = 27
+          Caption = 'Steps'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelTransitions: TLabel
+          Left = 112
+          Height = 13
+          Top = 167
+          Width = 33
+          Anchors = [akTop, akRight]
+          Caption = 'Transit'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          ParentColor = False
+          ParentFont = False
+        end
+        object CBShowCode: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 67
+          Width = 45
+          Caption = 'Code'
+          Checked = True
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnClick = CBShowCodeClick
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 15
+        end
+        object CBEliminateNewLine: TCheckBox
+          Left = 3
+          Height = 19
+          Top = 83
+          Width = 32
+          Caption = '";"'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          OnChange = CBEliminateNewLineChange
+          OnClick = CBEliminateNewLineClick
+          ParentFont = False
+          TabOrder = 18
+        end
+        object LabelCodeAreaSize1: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 83
+          Height = 17
+          Top = 69
+          Width = 44
+          Anchors = [akTop, akRight]
+          Caption = 'Height:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label11: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = 95
+          Height = 17
+          Top = 96
+          Width = 33
+          Anchors = [akTop, akRight]
+          Caption = 'Font:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object PairSplitBottom: TPairSplitterSide
+        Cursor = crArrow
+        Left = 0
+        Height = 310
+        Top = 192
+        Width = 257
+        ClientWidth = 257
+        ClientHeight = 310
+        inline SynEditST_G7: TSynEdit
+          AnchorSideBottom.Side = asrBottom
+          Left = 0
+          Height = 188
+          Top = 122
+          Width = 257
+          Align = alClient
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Courier New'
+          Font.Pitch = fpFixed
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 1
+          OnExit = SynEditST_G7Exit
+          OnMouseMove = SynEditST_G7MouseMove
+          Gutter.Visible = False
+          Gutter.Width = 61
+          Gutter.MouseActions = <>
+          RightGutter.Width = 0
+          RightGutter.MouseActions = <>
+          Highlighter = FMain.SynAnySyn_ST
+          Keystrokes = <          
+            item
+              Command = ecUp
+              ShortCut = 38
+            end          
+            item
+              Command = ecSelUp
+              ShortCut = 8230
+            end          
+            item
+              Command = ecScrollUp
+              ShortCut = 16422
+            end          
+            item
+              Command = ecDown
+              ShortCut = 40
+            end          
+            item
+              Command = ecSelDown
+              ShortCut = 8232
+            end          
+            item
+              Command = ecScrollDown
+              ShortCut = 16424
+            end          
+            item
+              Command = ecLeft
+              ShortCut = 37
+            end          
+            item
+              Command = ecSelLeft
+              ShortCut = 8229
+            end          
+            item
+              Command = ecWordLeft
+              ShortCut = 16421
+            end          
+            item
+              Command = ecSelWordLeft
+              ShortCut = 24613
+            end          
+            item
+              Command = ecRight
+              ShortCut = 39
+            end          
+            item
+              Command = ecSelRight
+              ShortCut = 8231
+            end          
+            item
+              Command = ecWordRight
+              ShortCut = 16423
+            end          
+            item
+              Command = ecSelWordRight
+              ShortCut = 24615
+            end          
+            item
+              Command = ecPageDown
+              ShortCut = 34
+            end          
+            item
+              Command = ecSelPageDown
+              ShortCut = 8226
+            end          
+            item
+              Command = ecPageBottom
+              ShortCut = 16418
+            end          
+            item
+              Command = ecSelPageBottom
+              ShortCut = 24610
+            end          
+            item
+              Command = ecPageUp
+              ShortCut = 33
+            end          
+            item
+              Command = ecSelPageUp
+              ShortCut = 8225
+            end          
+            item
+              Command = ecPageTop
+              ShortCut = 16417
+            end          
+            item
+              Command = ecSelPageTop
+              ShortCut = 24609
+            end          
+            item
+              Command = ecLineStart
+              ShortCut = 36
+            end          
+            item
+              Command = ecSelLineStart
+              ShortCut = 8228
+            end          
+            item
+              Command = ecEditorTop
+              ShortCut = 16420
+            end          
+            item
+              Command = ecSelEditorTop
+              ShortCut = 24612
+            end          
+            item
+              Command = ecLineEnd
+              ShortCut = 35
+            end          
+            item
+              Command = ecSelLineEnd
+              ShortCut = 8227
+            end          
+            item
+              Command = ecEditorBottom
+              ShortCut = 16419
+            end          
+            item
+              Command = ecSelEditorBottom
+              ShortCut = 24611
+            end          
+            item
+              Command = ecToggleMode
+              ShortCut = 45
+            end          
+            item
+              Command = ecCopy
+              ShortCut = 16429
+            end          
+            item
+              Command = ecPaste
+              ShortCut = 8237
+            end          
+            item
+              Command = ecDeleteChar
+              ShortCut = 46
+            end          
+            item
+              Command = ecCut
+              ShortCut = 8238
+            end          
+            item
+              Command = ecDeleteLastChar
+              ShortCut = 8
+            end          
+            item
+              Command = ecDeleteLastChar
+              ShortCut = 8200
+            end          
+            item
+              Command = ecDeleteLastWord
+              ShortCut = 16392
+            end          
+            item
+              Command = ecUndo
+              ShortCut = 32776
+            end          
+            item
+              Command = ecRedo
+              ShortCut = 40968
+            end          
+            item
+              Command = ecLineBreak
+              ShortCut = 13
+            end          
+            item
+              Command = ecSelectAll
+              ShortCut = 16449
+            end          
+            item
+              Command = ecCopy
+              ShortCut = 16451
+            end          
+            item
+              Command = ecBlockIndent
+              ShortCut = 24649
+            end          
+            item
+              Command = ecLineBreak
+              ShortCut = 16461
+            end          
+            item
+              Command = ecInsertLine
+              ShortCut = 16462
+            end          
+            item
+              Command = ecDeleteWord
+              ShortCut = 16468
+            end          
+            item
+              Command = ecBlockUnindent
+              ShortCut = 24661
+            end          
+            item
+              Command = ecPaste
+              ShortCut = 16470
+            end          
+            item
+              Command = ecCut
+              ShortCut = 16472
+            end          
+            item
+              Command = ecDeleteLine
+              ShortCut = 16473
+            end          
+            item
+              Command = ecDeleteEOL
+              ShortCut = 24665
+            end          
+            item
+              Command = ecUndo
+              ShortCut = 16474
+            end          
+            item
+              Command = ecRedo
+              ShortCut = 24666
+            end          
+            item
+              Command = ecGotoMarker0
+              ShortCut = 16432
+            end          
+            item
+              Command = ecGotoMarker1
+              ShortCut = 16433
+            end          
+            item
+              Command = ecGotoMarker2
+              ShortCut = 16434
+            end          
+            item
+              Command = ecGotoMarker3
+              ShortCut = 16435
+            end          
+            item
+              Command = ecGotoMarker4
+              ShortCut = 16436
+            end          
+            item
+              Command = ecGotoMarker5
+              ShortCut = 16437
+            end          
+            item
+              Command = ecGotoMarker6
+              ShortCut = 16438
+            end          
+            item
+              Command = ecGotoMarker7
+              ShortCut = 16439
+            end          
+            item
+              Command = ecGotoMarker8
+              ShortCut = 16440
+            end          
+            item
+              Command = ecGotoMarker9
+              ShortCut = 16441
+            end          
+            item
+              Command = ecSetMarker0
+              ShortCut = 24624
+            end          
+            item
+              Command = ecSetMarker1
+              ShortCut = 24625
+            end          
+            item
+              Command = ecSetMarker2
+              ShortCut = 24626
+            end          
+            item
+              Command = ecSetMarker3
+              ShortCut = 24627
+            end          
+            item
+              Command = ecSetMarker4
+              ShortCut = 24628
+            end          
+            item
+              Command = ecSetMarker5
+              ShortCut = 24629
+            end          
+            item
+              Command = ecSetMarker6
+              ShortCut = 24630
+            end          
+            item
+              Command = ecSetMarker7
+              ShortCut = 24631
+            end          
+            item
+              Command = ecSetMarker8
+              ShortCut = 24632
+            end          
+            item
+              Command = ecSetMarker9
+              ShortCut = 24633
+            end          
+            item
+              Command = EcFoldLevel1
+              ShortCut = 41009
+            end          
+            item
+              Command = EcFoldLevel2
+              ShortCut = 41010
+            end          
+            item
+              Command = EcFoldLevel1
+              ShortCut = 41011
+            end          
+            item
+              Command = EcFoldLevel1
+              ShortCut = 41012
+            end          
+            item
+              Command = EcFoldLevel1
+              ShortCut = 41013
+            end          
+            item
+              Command = EcFoldLevel6
+              ShortCut = 41014
+            end          
+            item
+              Command = EcFoldLevel7
+              ShortCut = 41015
+            end          
+            item
+              Command = EcFoldLevel8
+              ShortCut = 41016
+            end          
+            item
+              Command = EcFoldLevel9
+              ShortCut = 41017
+            end          
+            item
+              Command = EcFoldLevel0
+              ShortCut = 41008
+            end          
+            item
+              Command = EcFoldCurrent
+              ShortCut = 41005
+            end          
+            item
+              Command = EcUnFoldCurrent
+              ShortCut = 41003
+            end          
+            item
+              Command = EcToggleMarkupWord
+              ShortCut = 32845
+            end          
+            item
+              Command = ecNormalSelect
+              ShortCut = 24654
+            end          
+            item
+              Command = ecColumnSelect
+              ShortCut = 24643
+            end          
+            item
+              Command = ecLineSelect
+              ShortCut = 24652
+            end          
+            item
+              Command = ecTab
+              ShortCut = 9
+            end          
+            item
+              Command = ecShiftTab
+              ShortCut = 8201
+            end          
+            item
+              Command = ecMatchBracket
+              ShortCut = 24642
+            end          
+            item
+              Command = ecColSelUp
+              ShortCut = 40998
+            end          
+            item
+              Command = ecColSelDown
+              ShortCut = 41000
+            end          
+            item
+              Command = ecColSelLeft
+              ShortCut = 40997
+            end          
+            item
+              Command = ecColSelRight
+              ShortCut = 40999
+            end          
+            item
+              Command = ecColSelPageDown
+              ShortCut = 40994
+            end          
+            item
+              Command = ecColSelPageBottom
+              ShortCut = 57378
+            end          
+            item
+              Command = ecColSelPageUp
+              ShortCut = 40993
+            end          
+            item
+              Command = ecColSelPageTop
+              ShortCut = 57377
+            end          
+            item
+              Command = ecColSelLineStart
+              ShortCut = 40996
+            end          
+            item
+              Command = ecColSelLineEnd
+              ShortCut = 40995
+            end          
+            item
+              Command = ecColSelEditorTop
+              ShortCut = 57380
+            end          
+            item
+              Command = ecColSelEditorBottom
+              ShortCut = 57379
+            end>
+          MouseActions = <>
+          MouseTextActions = <>
+          MouseSelActions = <>
+          VisibleSpecialChars = [vscSpace, vscTabAtLast]
+          SelectedColor.BackPriority = 50
+          SelectedColor.ForePriority = 50
+          SelectedColor.FramePriority = 50
+          SelectedColor.BoldPriority = 50
+          SelectedColor.ItalicPriority = 50
+          SelectedColor.UnderlinePriority = 50
+          SelectedColor.StrikeOutPriority = 50
+          BracketHighlightStyle = sbhsBoth
+          BracketMatchColor.Background = clNone
+          BracketMatchColor.Foreground = clNone
+          BracketMatchColor.Style = [fsBold]
+          FoldedCodeColor.Background = clNone
+          FoldedCodeColor.Foreground = clGray
+          FoldedCodeColor.FrameColor = clGray
+          MouseLinkColor.Background = clNone
+          MouseLinkColor.Foreground = clBlue
+          LineHighlightColor.Background = clNone
+          LineHighlightColor.Foreground = clNone
+          OnChange = SynEditST_G7Change
+          inline SynLeftGutterPartList1: TSynGutterPartList
+            object SynGutterMarks1: TSynGutterMarks
+              Width = 24
+              MouseActions = <>
+            end
+            object SynGutterLineNumber1: TSynGutterLineNumber
+              Width = 21
+              MouseActions = <>
+              MarkupInfo.Background = clBtnFace
+              MarkupInfo.Foreground = clNone
+              DigitCount = 2
+              ShowOnlyLineNumbersMultiplesOf = 1
+              ZeroStart = False
+              LeadingZeros = False
+            end
+            object SynGutterChanges1: TSynGutterChanges
+              Width = 4
+              MouseActions = <>
+              ModifiedColor = 59900
+              SavedColor = clGreen
+            end
+            object SynGutterSeparator1: TSynGutterSeparator
+              Width = 2
+              MouseActions = <>
+              MarkupInfo.Background = clWhite
+              MarkupInfo.Foreground = clGray
+            end
+            object SynGutterCodeFolding1: TSynGutterCodeFolding
+              MouseActions = <>
+              MarkupInfo.Background = clNone
+              MarkupInfo.Foreground = clGray
+              MouseActionsExpanded = <>
+              MouseActionsCollapsed = <>
+            end
+          end
+        end
+        object VLEPropEdit: TValueListEditor
+          Left = 0
+          Height = 122
+          Top = 0
+          Width = 257
+          Align = alTop
+          DefaultColWidth = 96
+          DefaultRowHeight = 24
+          FixedCols = 0
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -10
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          RowCount = 4
+          ScrollBars = ssBoth
+          TabOrder = 0
+          OnKeyPress = VLEPropEditKeyPress
+          Strings.Strings = (
+            ''
+            ''
+            ''
+          )
+          TitleCaptions.Strings = (
+            'Property'
+            'Value'
+          )
+          OnValidate = VLEPropEditValidate
+          ColWidths = (
+            96
+            140
+          )
+        end
+        object Label7: TLabel
+          AnchorSideRight.Side = asrBottom
+          Left = -21
+          Height = 17
+          Top = 122
+          Width = 37
+          Anchors = [akTop, akRight]
+          Caption = 'Code:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -14
+          Font.Name = 'Tahoma'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object G7_MainMenu: TMainMenu
+    Left = 56
+    Top = 312
+    object MenuFile: TMenuItem
+      Caption = '&File'
+      object MenuNew: TMenuItem
+        Caption = '&New'
+        OnClick = MenuNewClick
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object MenuSaveProject: TMenuItem
+        Caption = 'Save &Project'
+        ShortCut = 16467
+        OnClick = MenuSaveProjectClick
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object MenuPrint: TMenuItem
+        Caption = '&Print...'
+        ShortCut = 16464
+        OnClick = MenuPrintClick
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object MenuExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = MenuExitClick
+      end
+    end
+    object MenuEdit: TMenuItem
+      Caption = '&Edit'
+      object MenuUndo: TMenuItem
+        Caption = '&Undo'
+        Enabled = False
+        ShortCut = 16474
+        OnClick = MenuUndoClick
+      end
+      object N8: TMenuItem
+        Caption = '-'
+      end
+      object MenuDelete: TMenuItem
+        Caption = '&Delete'
+        OnClick = MenuDeleteClick
+      end
+    end
+    object MenuView: TMenuItem
+      Caption = '&View'
+      object MenuZoomIn: TMenuItem
+        Caption = 'Zoom In'
+        ShortCut = 16457
+        OnClick = MenuZoomInClick
+      end
+      object MenuZoomOut: TMenuItem
+        Caption = 'Zoom Out'
+        ShortCut = 16463
+        OnClick = MenuZoomOutClick
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Zoom1: TMenuItem
+        Caption = 'Zoom'
+        object MenuZoom200: TMenuItem
+          Tag = 200
+          Caption = '200%'
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+        object MenuZoom100: TMenuItem
+          Tag = 100
+          Caption = '100%'
+          Checked = True
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+        object MenuZoom50: TMenuItem
+          Tag = 50
+          Caption = '50%'
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+        object MenuZoom33: TMenuItem
+          Tag = 33
+          Caption = '33%'
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+        object MenuZoom25: TMenuItem
+          Tag = 25
+          Caption = '25%'
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+        object MenuZoom20: TMenuItem
+          Tag = 20
+          Caption = '20%'
+          GroupIndex = 2
+          RadioItem = True
+          OnClick = MenuZoomClick
+        end
+      end
+      object N13: TMenuItem
+        Caption = '-'
+      end
+      object MenuedrawAll: TMenuItem
+        Caption = 'Redraw&All'
+        OnClick = MenuedrawAllClick
+      end
+      object MenuItem2: TMenuItem
+        Caption = '-'
+      end
+      object MenuShowCode: TMenuItem
+        Caption = 'Show Code'
+      end
+      object MenuNewLineContinuous: TMenuItem
+        Caption = 'New Line as §'
+        OnClick = MenuNewLineContinuousClick
+      end
+      object MenuRoundStates: TMenuItem
+        Caption = 'Round States'
+      end
+      object MenuDebugMode: TMenuItem
+        Caption = 'Debug Mode'
+      end
+    end
+    object MenuProject: TMenuItem
+      Caption = '&Grafcet'
+      object MenuProjectEdit: TMenuItem
+        Caption = 'Grafcet &Edit...'
+        OnClick = MenuProjectEditClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Grafcet &View'
+        OnClick = MenuItem3Click
+      end
+      object MenuGenCod: TMenuItem
+        Caption = '&Gen Cod (G7->ST)'
+        OnClick = MenuGenCodClick
+      end
+      object UndoLastCodeGeneration1: TMenuItem
+        Caption = '&Undo Last Code Generation'
+        OnClick = UndoLastCodeGeneration1Click
+      end
+      object N10: TMenuItem
+        Caption = '-'
+      end
+      object MenuG7STCompileRunOnce: TMenuItem
+        Caption = 'G7->ST + Run Once'
+        ShortCut = 119
+        Visible = False
+        OnClick = MenuG7STCompileRunOnceClick
+      end
+      object MenuG7STCompile: TMenuItem
+        Caption = 'G7->ST + &Compile'
+        ShortCut = 16504
+        OnClick = MenuG7STCompileClick
+      end
+      object MenuG7STRun: TMenuItem
+        Caption = 'G7->ST + &Run'
+        ShortCut = 120
+        OnClick = MenuG7STRunClick
+      end
+      object N15: TMenuItem
+        Caption = '-'
+      end
+      object MenuG7STC: TMenuItem
+        Caption = 'G7->ST->C'
+        ShortCut = 123
+        OnClick = MenuG7STCClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = '-'
+      end
+      object MenuStartGradingProcess: TMenuItem
+        Caption = 'Start && Stop Autom &Grading'
+        ShortCut = 16572
+        OnClick = MenuStartStopGradingClick
+      end
+      object MenuStartQAtPg2: TMenuItem
+        Caption = 'Start Q:=0 At Pg 2'
+        OnClick = MenuStartQAtPg2Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = '-'
+      end
+      object MenuCBResetOutsAtStartCycle: TMenuItem
+        Caption = 'Initial Q:=0'
+        Checked = True
+        OnClick = MenuCBResetOutsAtStartCycleClick
+      end
+    end
+    object MenuWindow: TMenuItem
+      Caption = 'Window'
+      object MenuRedraw: TMenuItem
+        Caption = 'Redraw'
+        OnClick = MenuRedrawClick
+      end
+      object MenuST: TMenuItem
+        Caption = '&Main - ST'
+        ShortCut = 113
+        OnClick = MenuSTClick
+      end
+      object MenuVars: TMenuItem
+        Caption = '&Variables'
+        ShortCut = 116
+        OnClick = MenuVarsClick
+      end
+      object MenuIOs: TMenuItem
+        Caption = '&Inputs/Outpus...'
+        ShortCut = 117
+        OnClick = MenuIOsClick
+      end
+      object MenuSelfGrade: TMenuItem
+        Caption = 'SelfGrade'
+        ShortCut = 115
+        OnClick = MenuSelfGradeClick
+      end
+    end
+    object N4: TMenuItem
+      Caption = '&Help'
+      object MenuItem1: TMenuItem
+        Caption = '&Code Generation'
+        OnClick = MenuItem1Click
+      end
+      object MenuAbout: TMenuItem
+        Caption = '&About'
+        OnClick = MenuAboutClick
+      end
+    end
+  end
+  object G7_PopupMenu: TPopupMenu
+    Left = 112
+    Top = 312
+    object PopMenuInsertRow: TMenuItem
+      Caption = 'Insert &Row'
+      OnClick = PopMenuInsertRowClick
+    end
+    object PopMenuShiftRow: TMenuItem
+      Caption = 'Shift &Up'
+      OnClick = PopMenuShiftRowClick
+    end
+    object PopMenuClearRow: TMenuItem
+      Caption = '&Clear Row'
+      OnClick = PopMenuClearRowClick
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object PopMenuInsertCol: TMenuItem
+      Caption = 'Insert &Column'
+      OnClick = PopMenuInsertColClick
+    end
+    object PopMenuShiftCol: TMenuItem
+      Caption = 'Shift &Left'
+      OnClick = PopMenuShiftColClick
+    end
+    object PopupMenuClearCol: TMenuItem
+      Caption = 'C&lear Col'
+      OnClick = PopupMenuClearColClick
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object PopMenuUndo: TMenuItem
+      Caption = 'Undo'
+      ShortCut = 16474
+    end
+    object N9: TMenuItem
+      Caption = '-'
+    end
+    object PopMenuDelete: TMenuItem
+      Caption = 'Delete Selected Obj'
+      ShortCut = 46
+      OnClick = PopMenuDeleteClick
+    end
+  end
+  object OpenDialog: TOpenDialog
+    DefaultExt = '.G7.xml'
+    Filter = 'FEUPAutom Grafcet XML files|*.G7.xml'
+    FilterIndex = 0
+    Left = 56
+    Top = 368
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.G7.xml'
+    Filter = 'FEUPAutom Grafcet XML files|*.G7.xml'
+    FilterIndex = 0
+    Left = 144
+    Top = 368
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 256
+    Top = 368
+  end
+  object SynCompletionG7: TSynCompletion
+    Position = 0
+    LinesInWindow = 6
+    SelectedColor = clHighlight
+    CaseSensitive = False
+    Width = 262
+    AutoUseSingleIdent = True
+    ShortCut = 16416
+    EndOfTokenChr = '()[].'
+    ExecCommandID = ecSynCompletionExecute
+    Editor = SynEditST_G7
+    ToggleReplaceWhole = False
+    Left = 344
+    Top = 368
+  end
+  object Timer1: TTimer
+    Interval = 987
+    OnTimer = Timer1Timer
+    Left = 400
+    Top = 16
+  end
+end

@@ -1,0 +1,311 @@
+<UniHighlighter>
+ <ImportantInfo>
+  ******* Please read carefully *************************
+  * Please, make any changes in this file very carefuly!*
+  * It is much more convinient to use native designer!  *
+  *******************************************************
+ </ImportantInfo>
+ <Info>
+  <General>
+   <Name>Structured Text</Name>
+   <FileTypeName>ST</FileTypeName>
+   <Layout>Standard</Layout>
+  </General>
+  <Author>
+   <Name>Armando Jorge Sousa</Name>
+   <Email>asousa@fe.up.pt</Email>
+   <Web>www.fe.up.pt/~asousa </Web>
+   <Copyright>Copyright (c) FEUP DEEC, 2007</Copyright>
+   <Company>N/A</Company>
+   <Remark>(for FEUP Autom)</Remark>
+  </Author>
+  <Version>
+   <Version>1</Version>
+   <Revision>5</Revision>
+   <Date>42156,6818089699</Date>
+   <Type>Release</Type>
+  </Version>
+  <History>
+  </History>
+  <Sample>
+   <S>(* Programa Exemplo - FEUPAutom - Outubro de 2006 *)</S>
+   <S>// g      xc c c</S>
+   <S></S>
+   <S>MemWord0:=MemWord0+1;</S>
+   <S>println(MemWord0);</S>
+   <S></S>
+   <S>IF MemWord0&gt;100 THEN</S>
+   <S>  MemWord0:=0;</S>
+   <S>  MemBit0:= NOT MemBit0;</S>
+   <S>  OutBit0:=MemBit0;</S>
+   <S>END_IF;</S>
+   <S></S>
+   <S>//while true do</S>
+   <S>  MemBit0:= NOT MemBit0;</S>
+   <S>  OutBit0:=MemBit0;</S>
+   <S>  // Test</S>
+   <S>//end_while;</S>
+   <S></S>
+   <S>(* De cada vez que InBit1 passa de 0 para 1, OutBit10 é invertido *)</S>
+   <S>OutBit2:=((InBit1=True) AND (MemBit1=False)) XOR OutBit2;</S>
+   <S>MemBit1:=Inbit1;  (* MemBit1 tem o InBit1 anterior  *)</S>
+  </Sample>
+ </Info>
+ <Range Name="Root">
+ <Def>
+  <Back>16777215</Back>
+  <Fore>0</Fore>
+  <Style></Style>
+ </Def>
+ <Num>
+  <Back>16777215</Back>
+  <Fore>4210816</Fore>
+  <Style></Style>
+ </Num>
+ <OpenSymbol></OpenSymbol>
+ <CloseSymbol></CloseSymbol>
+ <DelimiterChars>	!&qt;%&amp;'()*+,-./:;&lt;=&gt;?@[\]^{|}~</DelimiterChars>
+ <AnyTerm>True</AnyTerm>
+ <CloseOnTerm>False</CloseOnTerm>
+ <CloseOnEol>False</CloseOnEol>
+ <CaseSensitive>False</CaseSensitive>
+ <KW Name="ifs+cycles">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>16744448</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>if</W>
+  <W>then</W>
+  <W>else</W>
+  <W>elsif</W>
+  <W>end_if</W>
+  <W>for</W>
+  <W>to</W>
+  <W>do</W>
+  <W>downto</W>
+  <W>end_for</W>
+  <W>repeat</W>
+  <W>until</W>
+  <W>while</W>
+  <W>end_while</W>
+  <W>case</W>
+  <W>end_case</W>
+  <W></W>
+ </KW>
+ <KW Name="bool">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>and</W>
+  <W>or</W>
+  <W>xor</W>
+  <W>not</W>
+ </KW>
+ <KW Name="true_false">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>4210816</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>true</W>
+  <W>false</W>
+ </KW>
+ <KW Name="re_fe_start">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>8388672</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>re</W>
+  <W>fe</W>
+  <W>start</W>
+ </KW>
+ <KW Name="operators">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>4227072</Fore>
+   <Style></Style>
+  </Attri>
+  <W>+</W>
+  <W>-</W>
+  <W>&gt;</W>
+  <W>&lt;</W>
+  <W>^</W>
+  <W>:=</W>
+  <W>=</W>
+  <W>*</W>
+  <W>/</W>
+  <W>div</W>
+  <W>mod</W>
+ </KW>
+ <KW Name="commands">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>16711808</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>print</W>
+  <W>println</W>
+  <W></W>
+ </KW>
+ <KW Name="timer_stuff">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>ton</W>
+  <W>toff</W>
+  <W>start</W>
+ </KW>
+  <Range Name="Remarks (*..*)">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>(*</OpenSymbol>
+  <CloseSymbol>*)</CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Strings '..'">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711808</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711808</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>'</OpenSymbol>
+  <CloseSymbol>'</CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="PercentName">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711808</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711808</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>%</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-/:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Remarks {..}">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>{</OpenSymbol>
+  <CloseSymbol>}</CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Comment //">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>//</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Hex">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421440</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>$</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+ </Range>
+ <CopyRight>Rule file for UniHighlighter Delphi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>
+>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Remarks {..}">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>10485760</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>10485760</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>{</OpenSymbol>
+  <CloseSymbol>}</CloseSymbol>
+  <DelimiterChars>!&qt;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^`{|}~</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+ </Range>
+ <CopyRight>Rule file for UniHighlighter Delphi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>
+phi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>

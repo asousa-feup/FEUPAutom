@@ -1,0 +1,187 @@
+object FVariables: TFVariables
+  Left = 244
+  Height = 456
+  Top = 90
+  Width = 269
+  BorderStyle = bsSizeToolWin
+  Caption = 'Variables'
+  ClientHeight = 456
+  ClientWidth = 269
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnMouseWheel = FormMouseWheel
+  OnShow = FormShow
+  LCLVersion = '1.8.0.6'
+  object Label1: TLabel
+    Left = 4
+    Height = 13
+    Top = 38
+    Width = 39
+    Caption = '% Name'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 72
+    Height = 13
+    Top = 38
+    Width = 53
+    Caption = 'User Name'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 4
+    Height = 13
+    Top = 8
+    Width = 25
+    Caption = 'Filter:'
+    ParentColor = False
+  end
+  object EditPercentName: TEdit
+    Left = 0
+    Height = 21
+    Top = 54
+    Width = 65
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object EditUserName: TEdit
+    Left = 66
+    Height = 21
+    Top = 54
+    Width = 101
+    OnKeyDown = EditUserNameKeyDown
+    TabOrder = 1
+  end
+  object BOK: TButton
+    Left = 170
+    Height = 21
+    Hint = '(Enter)'
+    Top = 54
+    Width = 27
+    Caption = '&OK'
+    Default = True
+    OnClick = BOKClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+  object BCancel: TButton
+    Left = 196
+    Height = 21
+    Hint = '(Esc)'
+    Top = 54
+    Width = 40
+    Cancel = True
+    Caption = '&Cancel'
+    OnClick = BCancelClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object CBNextVar: TCheckBox
+    Left = 168
+    Height = 19
+    Top = 33
+    Width = 42
+    Caption = '&Next'
+    Checked = True
+    State = cbChecked
+    TabOrder = 4
+  end
+  object BDefaultNames: TButton
+    Left = 170
+    Height = 21
+    Hint = 'Set All Default (Simplex) Names'
+    Top = 4
+    Width = 40
+    Caption = '&Default'
+    OnClick = BDefaultNamesClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+  end
+  object BClear: TButton
+    Left = 212
+    Height = 21
+    Hint = 'Clear all names'
+    Top = 4
+    Width = 45
+    Caption = 'C&lear'
+    OnClick = BClearClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+  end
+  object SGVars: TStringGrid
+    Left = 0
+    Height = 341
+    Top = 80
+    Width = 261
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 2
+    DefaultColWidth = 60
+    DefaultRowHeight = 18
+    Options = [goFixedVertLine, goFixedHorzLine, goHorzLine, goRowSelect]
+    TabOrder = 7
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    OnSelectCell = SGVarsSelectCell
+  end
+  object CBTypes: TComboBox
+    Left = 36
+    Height = 21
+    Top = 4
+    Width = 129
+    DropDownCount = 10
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'All'
+      'Filled'
+      'I - Inputs'
+      'Q - Outputs'
+      'M - MemBits'
+      'MW - MemWords'
+      'S - SysBits'
+      'SW - SysWords'
+      'TM - Timer'
+    )
+    OnChange = CBTypesChange
+    TabOrder = 8
+    Text = 'All'
+  end
+  object BIns8Line: TButton
+    Left = 236
+    Height = 17
+    Top = 26
+    Width = 21
+    Anchors = [akTop, akRight]
+    Caption = '+8'
+    OnClick = BIns8LineClick
+    TabOrder = 9
+  end
+  object BDelLine: TButton
+    Left = 236
+    Height = 17
+    Top = 59
+    Width = 21
+    Anchors = [akTop, akRight]
+    Caption = '-'
+    OnClick = BDelLineClick
+    TabOrder = 10
+  end
+  object BInsLine: TButton
+    Left = 236
+    Height = 17
+    Top = 43
+    Width = 21
+    Anchors = [akTop, akRight]
+    Caption = '+'
+    OnClick = BInsLineClick
+    TabOrder = 11
+  end
+end
