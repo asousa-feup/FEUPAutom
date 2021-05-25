@@ -32,6 +32,12 @@ type                // Inspiracao:   println(_TIMERS(0).v);_START_TIMERS(0); _ST
 
 procedure PLCStateToScriptState(var CurState: TPLCState; const PrevState: TPLCState);
 
+
+var
+  VarSearchTable : array of string;
+
+
+
 {FA_TAG:
 procedure ScriptStateToPLCState( var prog: TProgram; var PLCState: TPLCState);
 }
@@ -332,20 +338,42 @@ end;
 
 
 
+
 function SearchVarInSGVars(const VarName:string) : integer;
 // Returns line in SGVars, -1 Not Found
+// Be carefull... VarSearchTable must be reset on compile & var change
 var
   i : integer;
   aName : string;
 begin
+  //result := -1;
+  //aName := Trim(UpperCase(VarName));
+  //for i:=1 to FVariables.SGVars.RowCount-1 do begin
+  //  if (UpperCase(trim(FVariables.SGVars.Cells[1,i])) = aName) Then begin
+  //    result:=i;
+  //    exit;
+  //  end;
+  //end;
+
+  if Length(VarSearchTable)=0 then begin
+    SetLength(VarSearchTable,FVariables.SGVars.RowCount+2);
+    VarSearchTable[0] := '';
+    VarSearchTable[FVariables.SGVars.RowCount+1] := '';
+    for i:=1 to FVariables.SGVars.RowCount-1 do begin
+      VarSearchTable[i] :=  UpperCase(trim(FVariables.SGVars.Cells[1,i]));
+    end;
+  end;
+
   result := -1;
   aName := Trim(UpperCase(VarName));
   for i:=1 to FVariables.SGVars.RowCount-1 do begin
-    if (UpperCase(trim(FVariables.SGVars.Cells[1,i])) = aName) Then begin
+    if VarSearchTable[i] = aName Then begin
       result:=i;
       exit;
     end;
   end;
+
+
 end;
 
 

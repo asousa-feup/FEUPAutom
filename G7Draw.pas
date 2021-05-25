@@ -4403,6 +4403,8 @@ begin
 
   ZeroMemory(@result,sizeof(result));
 
+  SetLength(VarSearchTable,0); // Clear ST2pas var number optimization Table
+
   cnt := 0;
   for i:=0 to MAXG7Objects-1 do begin
     if cnt >= G7ObjectsCount then break;

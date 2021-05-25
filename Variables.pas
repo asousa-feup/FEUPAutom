@@ -198,6 +198,7 @@ begin
 
   SGVars.Cells[1,EditingRow]:=EditUserName.Text;
   FIOLeds.UpdateNames;
+  SetLength(VarSearchTable,0); // Clear ST2pas var number optimization Table
 
   if CBNextVar.Checked then begin
     NewEditingRow:=EditingRow;
