@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FEUPAutom>
+  <FAProject>
+    <FMain>
+      <Props1 ActiveTab="3" MessagesHeight="93"/>
+      <Props2 ModBusIP="localhost" ModBusPort="5502" ModBusNRead="48" ModBusNWrite="48" ModBusOffs_I="5392" ModBusOffs_O="0" ModBusFunc="0" ModBus="0" Period="39" WinMsg="0"/>
+      <Props3 ProjectAuthor="" ProjectComments="" ProjectGrafcet="1" ProjectGen_C_Code="1"/>
+      <Geometry top="90" left="247" height="748" width="945"/>
+      <ST_Code count="462">
+        <line1>~</line1>
+        <line2>~////////////////////////////////////////////////////////////</line2>
+        <line3>~// FEUPAutom - 5.3.0.45 - </line3>
+        <line4>~// Code Automatically Generated:06-07-2016 01:57:25</line4>
+        <line5>~////////////////////////////////////////////////////////////</line5>
+        <line6>~</line6>
+        <line7>~//######################################//</line7>
+        <line8>~//################ Page 3 ##############//</line8>
+        <line9>~//######################################//</line9>
+        <line10>~</line10>
+        <line11>~////////////////////////////////////////////////////////////</line11>
+        <line12>~///////////// If boot =&gt; Set Initial Steps /////////////////</line12>
+        <line13>~//####################### Page 3 ########################//</line13>
+        <line14>~////////////////////////////////////////////////////////////</line14>
+        <line15>~</line15>
+        <line16>~  If (sw0=0) Then</line16>
+        <line17>~  End_If;</line17>
+        <line18>~if (sw0&gt;0) then  // ** Prevent evolution in initial cycle</line18>
+        <line19>~</line19>
+        <line20>~////////////////////////////////////////////////////////////</line20>
+        <line21>~///////////////// Calc Fired Transitions ///////////////////</line21>
+        <line22>~//####################### Page 3 ########################//</line22>
+        <line23>~////////////////////////////////////////////////////////////</line23>
+        <line24>~</line24>
+        <line25>~end_if; //** Prevent evolution in initial cycle</line25>
+        <line26>~</line26>
+        <line27>~////////////////////////////////////////////////////////////</line27>
+        <line28>~///////////////// ReSet Steps Above fired Tr ///////////////</line28>
+        <line29>~//####################### Page 3 ########################//</line29>
+        <line30>~////////////////////////////////////////////////////////////</line30>
+        <line31>~</line31>
+        <line32>~</line32>
+        <line33>~////////////////////////////////////////////////////////////</line33>
+        <line34>~///////////////// Set Steps below fired Tr /////////////////</line34>
+        <line35>~//####################### Page 3 ########################//</line35>
+        <line36>~////////////////////////////////////////////////////////////</line36>
+        <line37>~</line37>
+        <line38>~</line38>
+        <line39>~////////////////////////////////////////////////////////////</line39>
+        <line40>~////////// Unset all Outputs (once for all pages) //////////</line40>
+        <line41>~//####################### Page 3 ########################//</line41>
+        <line42>~////////////////////////////////////////////////////////////</line42>
+        <line43>~</line43>
+        <line44>~  Q0:=False;</line44>
+        <line45>~  Q1:=False;</line45>
+        <line46>~  Q2:=False;</line46>
+        <line47>~  Q3:=False;</line47>
+        <line48>~  Q4:=False;</line48>
+        <line49>~  Q5:=False;</line49>
+        <line50>~  Q6:=False;</line50>
+        <line51>~  Q7:=False;</line51>
+        <line52>~  Q8:=False;</line52>
+        <line53>~  Q9:=False;</line53>
+        <line54>~  Q10:=False;</line54>
+        <line55>~  Q11:=False;</line55>
+        <line56>~  Q12:=False;</line56>
+        <line57>~  Q13:=False;</line57>
+        <line58>~  Q14:=False;</line58>
+        <line59>~  Q15:=False;</line59>
+        <line60>~  Q16:=False;</line60>
+        <line61>~  Q17:=False;</line61>
+        <line62>~  Q18:=False;</line62>
+        <line63>~  Q19:=False;</line63>
+        <line64>~  Q20:=False;</line64>
+        <line65>~  Q21:=False;</line65>
+        <line66>~  Q22:=False;</line66>
+        <line67>~  Q23:=False;</line67>
+        <line68>~  Q24:=False;</line68>
+        <line69>~  Q25:=False;</line69>
+        <line70>~  Q26:=False;</line70>
+        <line71>~  Q27:=False;</line71>
+        <line72>~  Q28:=False;</line72>
+        <line73>~  Q29:=False;</line73>
+        <line74>~  Q30:=False;</line74>
+        <line75>~  Q31:=False;</line75>
+        <line76>~  Q32:=False;</line76>
+        <line77>~  Q33:=False;</line77>
+        <line78>~  Q34:=False;</line78>
+        <line79>~  Q35:=False;</line79>
+        <line80>~  Q36:=False;</line80>
+        <line81>~  Q37:=False;</line81>
+        <line82>~  Q38:=False;</line82>
+        <line83>~  Q39:=False;</line83>
+        <line84>~  Q40:=False;</line84>
+        <line85>~  Q41:=False;</line85>
+        <line86>~  Q42:=False;</line86>
+        <line87>~  Q43:=False;</line87>
+        <line88>~  Q44:=False;</line88>
+        <line89>~  Q45:=False;</line89>
+        <line90>~  Q46:=False;</line90>
+        <line91>~  Q47:=False;</line91>
+        <line92>~</line92>
+        <line93>~////////////////////////////////////////////////////////////</line93>
+        <line94>~///// If step active increment MW timer of step @ %s16 /////</line94>
+        <line95>~//####################### Page 3 ########################//</line95>
+        <line96>~////////////////////////////////////////////////////////////</line96>
+        <line97>~</line97>
+        <line98>~</line98>
+        <line99>~////////////////////////////////////////////////////////////</line99>
+        <line100>~//////// If step active, execute its action code ///////////</line100>
+        <line101>~//####################### Page 3 ########################//</line101>
+        <line102>~////////////////////////////////////////////////////////////</line102>
+        <line103>~</line103>
+        <line104>~</line104>
+        <line105>~//######################################//</line105>
+        <line106>~//################ Page 2 ##############//</line106>
+        <line107>~//######################################//</line107>
+        <line108>~</line108>
+        <line109>~////////////////////////////////////////////////////////////</line109>
+        <line110>~///////////// If boot =&gt; Set Initial Steps /////////////////</line110>
+        <line111>~//####################### Page 2 ########################//</line111>
+        <line112>~////////////////////////////////////////////////////////////</line112>
+        <line113>~</line113>
+        <line114>~  If (sw0=0) Then</line114>
+        <line115>~  End_If;</line115>
+        <line116>~if (sw0&gt;0) then  // ** Prevent evolution in initial cycle</line116>
+        <line117>~</line117>
+        <line118>~////////////////////////////////////////////////////////////</line118>
+        <line119>~///////////////// Calc Fired Transitions ///////////////////</line119>
+        <line120>~//####################### Page 2 ########################//</line120>
+        <line121>~////////////////////////////////////////////////////////////</line121>
+        <line122>~</line122>
+        <line123>~end_if; //** Prevent evolution in initial cycle</line123>
+        <line124>~</line124>
+        <line125>~////////////////////////////////////////////////////////////</line125>
+        <line126>~///////////////// ReSet Steps Above fired Tr ///////////////</line126>
+        <line127>~//####################### Page 2 ########################//</line127>
+        <line128>~////////////////////////////////////////////////////////////</line128>
+        <line129>~</line129>
+        <line130>~</line130>
+        <line131>~////////////////////////////////////////////////////////////</line131>
+        <line132>~///////////////// Set Steps below fired Tr /////////////////</line132>
+        <line133>~//####################### Page 2 ########################//</line133>
+        <line134>~////////////////////////////////////////////////////////////</line134>
+        <line135>~</line135>
+        <line136>~</line136>
+        <line137>~////////////////////////////////////////////////////////////</line137>
+        <line138>~///// If step active increment MW timer of step @ %s16 /////</line138>
+        <line139>~//####################### Page 2 ########################//</line139>
+        <line140>~////////////////////////////////////////////////////////////</line140>
+        <line141>~</line141>
+        <line142>~</line142>
+        <line143>~////////////////////////////////////////////////////////////</line143>
+        <line144>~//////// If step active, execute its action code ///////////</line144>
+        <line145>~//####################### Page 2 ########################//</line145>
+        <line146>~////////////////////////////////////////////////////////////</line146>
+        <line147>~</line147>
+        <line148>~</line148>
+        <line149>~//######################################//</line149>
+        <line150>~//################ Page 1 ##############//</line150>
+        <line151>~//######################################//</line151>
+        <line152>~</line152>
+        <line153>~////////////////////////////////////////////////////////////</line153>
+        <line154>~///////////// If boot =&gt; Set Initial Steps /////////////////</line154>
+        <line155>~//####################### Page 1 ########################//</line155>
+        <line156>~////////////////////////////////////////////////////////////</line156>
+        <line157>~</line157>
+        <line158>~  If (sw0=0) Then</line158>
+        <line159>~  End_If;</line159>
+        <line160>~if (sw0&gt;0) then  // ** Prevent evolution in initial cycle</line160>
+        <line161>~</line161>
+        <line162>~////////////////////////////////////////////////////////////</line162>
+        <line163>~///////////////// Calc Fired Transitions ///////////////////</line163>
+        <line164>~//####################### Page 1 ########################//</line164>
+        <line165>~////////////////////////////////////////////////////////////</line165>
+        <line166>~</line166>
+        <line167>~end_if; //** Prevent evolution in initial cycle</line167>
+        <line168>~</line168>
+        <line169>~////////////////////////////////////////////////////////////</line169>
+        <line170>~///////////////// ReSet Steps Above fired Tr ///////////////</line170>
+        <line171>~//####################### Page 1 ########################//</line171>
+        <line172>~////////////////////////////////////////////////////////////</line172>
+        <line173>~</line173>
+        <line174>~</line174>
+        <line175>~////////////////////////////////////////////////////////////</line175>
+        <line176>~///////////////// Set Steps below fired Tr /////////////////</line176>
+        <line177>~//####################### Page 1 ########################//</line177>
+        <line178>~////////////////////////////////////////////////////////////</line178>
+        <line179>~</line179>
+        <line180>~</line180>
+        <line181>~////////////////////////////////////////////////////////////</line181>
+        <line182>~///// If step active increment MW timer of step @ %s16 /////</line182>
+        <line183>~//####################### Page 1 ########################//</line183>
+        <line184>~////////////////////////////////////////////////////////////</line184>
+        <line185>~</line185>
+        <line186>~</line186>
+        <line187>~////////////////////////////////////////////////////////////</line187>
+        <line188>~//////// If step active, execute its action code ///////////</line188>
+        <line189>~//####################### Page 1 ########################//</line189>
+        <line190>~////////////////////////////////////////////////////////////</line190>
+        <line191>~</line191>
+        <line192>~</line192>
+        <line193>~//######################################//</line193>
+        <line194>~//################ Page 0 ##############//</line194>
+        <line195>~//######################################//</line195>
+        <line196>~</line196>
+        <line197>~////////////////////////////////////////////////////////////</line197>
+        <line198>~////////////////////////// Zone1 ///////////////////////////</line198>
+        <line199>~//####################### Page 0 ########################//</line199>
+        <line200>~////////////////////////////////////////////////////////////</line200>
+        <line201>~</line201>
+        <line202>~ if (sw0=0) then</line202>
+        <line203>~ </line203>
+        <line204>~   calibrate();</line204>
+        <line205>~ </line205>
+        <line206>~ end_if;</line206>
+        <line207>~ </line207>
+        <line208>~ </line208>
+        <line209>~ </line209>
+        <line210>~ </line210>
+        <line211>~ </line211>
+        <line212>~</line212>
+        <line213>~////////////////////////////////////////////////////////////</line213>
+        <line214>~///////////// If boot =&gt; Set Initial Steps /////////////////</line214>
+        <line215>~//####################### Page 0 ########################//</line215>
+        <line216>~////////////////////////////////////////////////////////////</line216>
+        <line217>~</line217>
+        <line218>~  If (sw0=0) Then</line218>
+        <line219>~  // ObjIdx=6 =&gt; INI_Step "X2"</line219>
+        <line220>~    X2 := True;</line220>
+        <line221>~  End_If;</line221>
+        <line222>~if (sw0&gt;0) then  // ** Prevent evolution in initial cycle</line222>
+        <line223>~</line223>
+        <line224>~////////////////////////////////////////////////////////////</line224>
+        <line225>~///////////////// Calc Fired Transitions ///////////////////</line225>
+        <line226>~//####################### Page 0 ########################//</line226>
+        <line227>~////////////////////////////////////////////////////////////</line227>
+        <line228>~</line228>
+        <line229>~// ObjIdx=1 =&gt; Transition "t0"</line229>
+        <line230>~  // Steps Above: id=0 =&gt; X0 ;</line230>
+        <line231>~  // Steps Below: id=2 =&gt; X1 ;</line231>
+        <line232>~  t0 :=  X0 AND  (x0_T&gt;100 (* em dezenas de ms *));</line232>
+        <line233>~// ObjIdx=3 =&gt; Transition "t1"</line233>
+        <line234>~  // Steps Above: id=2 =&gt; X1 ;</line234>
+        <line235>~  // Steps Below: id=0 =&gt; X0 ;</line235>
+        <line236>~  t1 :=  X1 AND  ((x1_t&gt;100) and not i0 and not i2);</line236>
+        <line237>~// ObjIdx=7 =&gt; Transition "t2"</line237>
+        <line238>~  // Steps Above: id=6 =&gt; X2 ;</line238>
+        <line239>~  // Steps Below: id=0 =&gt; X0 ;</line239>
+        <line240>~  t2 :=  X2 AND  (i1);</line240>
+        <line241>~// ObjIdx=10 =&gt; Transition "t3"</line241>
+        <line242>~  // Steps Above: id=2 =&gt; X1 ;</line242>
+        <line243>~  // Steps Below: id=6 =&gt; X2 ;</line243>
+        <line244>~  t3 :=  X1 AND  (i0 or i2);</line244>
+        <line245>~end_if; //** Prevent evolution in initial cycle</line245>
+        <line246>~</line246>
+        <line247>~////////////////////////////////////////////////////////////</line247>
+        <line248>~///////////////// ReSet Steps Above fired Tr ///////////////</line248>
+        <line249>~//####################### Page 0 ########################//</line249>
+        <line250>~////////////////////////////////////////////////////////////</line250>
+        <line251>~</line251>
+        <line252>~// ObjIdx=1 =&gt; Transition "t0"</line252>
+        <line253>~  // Steps Above: id=0 =&gt; X0 ;</line253>
+        <line254>~  // Steps Below: id=2 =&gt; X1 ;</line254>
+        <line255>~  If (t0) Then</line255>
+        <line256>~     X0:=False; </line256>
+        <line257>~  End_If;</line257>
+        <line258>~// ObjIdx=3 =&gt; Transition "t1"</line258>
+        <line259>~  // Steps Above: id=2 =&gt; X1 ;</line259>
+        <line260>~  // Steps Below: id=0 =&gt; X0 ;</line260>
+        <line261>~  If (t1) Then</line261>
+        <line262>~     X1:=False; </line262>
+        <line263>~  End_If;</line263>
+        <line264>~// ObjIdx=7 =&gt; Transition "t2"</line264>
+        <line265>~  // Steps Above: id=6 =&gt; X2 ;</line265>
+        <line266>~  // Steps Below: id=0 =&gt; X0 ;</line266>
+        <line267>~  If (t2) Then</line267>
+        <line268>~     X2:=False; </line268>
+        <line269>~  End_If;</line269>
+        <line270>~// ObjIdx=10 =&gt; Transition "t3"</line270>
+        <line271>~  // Steps Above: id=2 =&gt; X1 ;</line271>
+        <line272>~  // Steps Below: id=6 =&gt; X2 ;</line272>
+        <line273>~  If (t3) Then</line273>
+        <line274>~     X1:=False; </line274>
+        <line275>~  End_If;</line275>
+        <line276>~</line276>
+        <line277>~////////////////////////////////////////////////////////////</line277>
+        <line278>~///////////////// Set Steps below fired Tr /////////////////</line278>
+        <line279>~//####################### Page 0 ########################//</line279>
+        <line280>~////////////////////////////////////////////////////////////</line280>
+        <line281>~</line281>
+        <line282>~// ObjIdx=1 =&gt; Transition "t0"</line282>
+        <line283>~  // Steps Above: id=0 =&gt; X0 ;</line283>
+        <line284>~  // Steps Below: id=2 =&gt; X1 ;</line284>
+        <line285>~  If (t0) Then </line285>
+        <line286>~    X1 := True; </line286>
+        <line287>~    X1_T := 0; </line287>
+        <line288>~  End_If;</line288>
+        <line289>~// ObjIdx=3 =&gt; Transition "t1"</line289>
+        <line290>~  // Steps Above: id=2 =&gt; X1 ;</line290>
+        <line291>~  // Steps Below: id=0 =&gt; X0 ;</line291>
+        <line292>~  If (t1) Then </line292>
+        <line293>~    X0 := True; </line293>
+        <line294>~    X0_T := 0; </line294>
+        <line295>~  End_If;</line295>
+        <line296>~// ObjIdx=7 =&gt; Transition "t2"</line296>
+        <line297>~  // Steps Above: id=6 =&gt; X2 ;</line297>
+        <line298>~  // Steps Below: id=0 =&gt; X0 ;</line298>
+        <line299>~  If (t2) Then </line299>
+        <line300>~    X0 := True; </line300>
+        <line301>~    X0_T := 0; </line301>
+        <line302>~  End_If;</line302>
+        <line303>~// ObjIdx=10 =&gt; Transition "t3"</line303>
+        <line304>~  // Steps Above: id=2 =&gt; X1 ;</line304>
+        <line305>~  // Steps Below: id=6 =&gt; X2 ;</line305>
+        <line306>~  If (t3) Then </line306>
+        <line307>~    X2 := True; </line307>
+        <line308>~    X2_T := 0; </line308>
+        <line309>~  End_If;</line309>
+        <line310>~</line310>
+        <line311>~////////////////////////////////////////////////////////////</line311>
+        <line312>~///// If step active increment MW timer of step @ %s16 /////</line312>
+        <line313>~//####################### Page 0 ########################//</line313>
+        <line314>~////////////////////////////////////////////////////////////</line314>
+        <line315>~</line315>
+        <line316>~  // ObjIdx=0 =&gt; Step "X0"</line316>
+        <line317>~  If (s16) and (X0) Then </line317>
+        <line318>~    X0_T := X0_T+1;</line318>
+        <line319>~  end_if;</line319>
+        <line320>~  // ObjIdx=2 =&gt; Step "X1"</line320>
+        <line321>~  If (s16) and (X1) Then </line321>
+        <line322>~    X1_T := X1_T+1;</line322>
+        <line323>~  end_if;</line323>
+        <line324>~  // ObjIdx=6 =&gt; Step "X2"</line324>
+        <line325>~  If (s16) and (X2) Then </line325>
+        <line326>~    X2_T := X2_T+1;</line326>
+        <line327>~  end_if;</line327>
+        <line328>~  // ObjIdx=8 =&gt; Step "Zone8"</line328>
+        <line329>~  If (s16) and (Zone8) Then </line329>
+        <line330>~    Zone8_T := Zone8_T+1;</line330>
+        <line331>~  end_if;</line331>
+        <line332>~  // ObjIdx=9 =&gt; Step "Zone1"</line332>
+        <line333>~  If (s16) and (Zone1) Then </line333>
+        <line334>~    Zone1_T := Zone1_T+1;</line334>
+        <line335>~  end_if;</line335>
+        <line336>~</line336>
+        <line337>~////////////////////////////////////////////////////////////</line337>
+        <line338>~//////// If step active, execute its action code ///////////</line338>
+        <line339>~//####################### Page 0 ########################//</line339>
+        <line340>~////////////////////////////////////////////////////////////</line340>
+        <line341>~</line341>
+        <line342>~  // ObjIdx=0 =&gt; Step "X0" (code...)</line342>
+        <line343>~  If X0 Then </line343>
+        <line344>~    q0:=true; // só para teste</line344>
+        <line345>~    </line345>
+        <line346>~    v1:=19;</line346>
+        <line347>~    </line347>
+        <line348>~    v2:=19;</line348>
+        <line349>~    </line349>
+        <line350>~  End_If;</line350>
+        <line351>~  // ObjIdx=2 =&gt; Step "X1" (code...)</line351>
+        <line352>~  If X1 Then </line352>
+        <line353>~    q1:=true; // só para teste</line353>
+        <line354>~    </line354>
+        <line355>~    v1:=-19;</line355>
+        <line356>~    </line356>
+        <line357>~    v2:=-19;</line357>
+        <line358>~    </line358>
+        <line359>~  End_If;</line359>
+        <line360>~  // ObjIdx=6 =&gt; Step "X2" (code...)</line360>
+        <line361>~  If X2 Then </line361>
+        <line362>~    v1:=0;v2:=0;</line362>
+        <line363>~    </line363>
+        <line364>~    </line364>
+        <line365>~    </line365>
+        <line366>~    // MW50 conta decimos de seg</line366>
+        <line367>~    </line367>
+        <line368>~    if (S16) then   MW50:=MW50+1; end_if;</line368>
+        <line369>~    </line369>
+        <line370>~    </line370>
+        <line371>~    </line371>
+        <line372>~    if (MW50%500)=0 then</line372>
+        <line373>~    </line373>
+        <line374>~      play("&gt;c32");</line374>
+        <line375>~    </line375>
+        <line376>~    else</line376>
+        <line377>~    </line377>
+        <line378>~      if (MW50%100)=0 then</line378>
+        <line379>~    </line379>
+        <line380>~        play("&lt;c32");</line380>
+        <line381>~    </line381>
+        <line382>~      end_if;</line382>
+        <line383>~    </line383>
+        <line384>~    end_if;</line384>
+        <line385>~    </line385>
+        <line386>~    </line386>
+        <line387>~    </line387>
+        <line388>~    </line388>
+        <line389>~    </line389>
+        <line390>~  End_If;</line390>
+        <line391>~  // ObjIdx=8 =&gt; Step "Zone8" (code...)</line391>
+        <line392>~  If Zone8 Then </line392>
+        <line393>~    if (S16) then</line393>
+        <line394>~    </line394>
+        <line395>~      clear();</line395>
+        <line396>~    </line396>
+        <line397>~      printf("%1u%1d%1u",x0,x1,x2);</line397>
+        <line398>~    </line398>
+        <line399>~      lcd_goto_xy(0,1);</line399>
+        <line400>~    </line400>
+        <line401>~      //printf("%02u,%02u", x0_T, x1_T);</line401>
+        <line402>~    </line402>
+        <line403>~      printf("%04d", position);</line403>
+        <line404>~    </line404>
+        <line405>~    end_if;</line405>
+        <line406>~    </line406>
+        <line407>~    </line407>
+        <line408>~    </line408>
+        <line409>~    set_motors(v1,v2);</line409>
+        <line410>~    </line410>
+        <line411>~    </line411>
+        <line412>~    </line412>
+        <line413>~    </line413>
+        <line414>~    </line414>
+        <line415>~    </line415>
+        <line416>~    </line416>
+        <line417>~  End_If;</line417>
+        <line418>~  // ObjIdx=9 =&gt; Step "Zone1" (code...)</line418>
+        <line419>~  If Zone1 Then </line419>
+        <line420>~    if (sw0=0) then</line420>
+        <line421>~    </line421>
+        <line422>~      calibrate();</line422>
+        <line423>~    </line423>
+        <line424>~    end_if;</line424>
+        <line425>~    </line425>
+        <line426>~    </line426>
+        <line427>~    </line427>
+        <line428>~    </line428>
+        <line429>~    </line429>
+        <line430>~  End_If;</line430>
+        <line431>~</line431>
+        <line432>~////////////////////////////////////////////////////////////</line432>
+        <line433>~////////////////////////// Zone8 ///////////////////////////</line433>
+        <line434>~//####################### Page 0 ########################//</line434>
+        <line435>~////////////////////////////////////////////////////////////</line435>
+        <line436>~</line436>
+        <line437>~ if (S16) then</line437>
+        <line438>~ </line438>
+        <line439>~   clear();</line439>
+        <line440>~ </line440>
+        <line441>~   printf("%1u%1d%1u",x0,x1,x2);</line441>
+        <line442>~ </line442>
+        <line443>~   lcd_goto_xy(0,1);</line443>
+        <line444>~ </line444>
+        <line445>~   //printf("%02u,%02u", x0_T, x1_T);</line445>
+        <line446>~ </line446>
+        <line447>~   printf("%04d", position);</line447>
+        <line448>~ </line448>
+        <line449>~ end_if;</line449>
+        <line450>~ </line450>
+        <line451>~ </line451>
+        <line452>~ </line452>
+        <line453>~ set_motors(v1,v2);</line453>
+        <line454>~ </line454>
+        <line455>~ </line455>
+        <line456>~ </line456>
+        <line457>~ </line457>
+        <line458>~ </line458>
+        <line459>~ </line459>
+        <line460>~ </line460>
+        <line461>~</line461>
+        <line462>~(*************** End of ST Code ****************)</line462>
+      </ST_Code>
+    </FMain>
+    <FVariables>
+      <Props Visible="0" NextVar="-1" Filter="0"/>
+      <Geometry top="105" left="288" height="456" width="269"/>
+      <Vars_Names count="641">
+        <var1></var1>
+        <var2>X0</var2>
+        <var3>t0</var3>
+        <var4>X1</var4>
+        <var5>t1</var5>
+        <var6>M4</var6>
+        <var7>M5</var7>
+        <var8>X2</var8>
+        <var9>t2</var9>
+        <var10>Zone8</var10>
+        <var11>Zone1</var11>
+        <var12>t3</var12>
+        <var13>M11</var13>
+        <var14>M12</var14>
+        <var15>M13</var15>
+        <var16>M14</var16>
+        <var17>M15</var17>
+        <var18>M16</var18>
+        <var19>M17</var19>
+        <var20>M18</var20>
+        <var21>M19</var21>
+        <var22>M20</var22>
+        <var23>M21</var23>
+        <var24>M22</var24>
+        <var25>M23</var25>
+        <var26>M24</var26>
+        <var27>M25</var27>
+        <var28>M26</var28>
+        <var29>M27</var29>
+        <var30>M28</var30>
+        <var31>M29</var31>
+        <var32>M30</var32>
+        <var33>M31</var33>
+        <var34>M32</var34>
+        <var35>M33</var35>
+        <var36>M34</var36>
+        <var37>M35</var37>
+        <var38>M36</var38>
+        <var39>M37</var39>
+        <var40>M38</var40>
+        <var41>M39</var41>
+        <var42>M40</var42>
+        <var43>M41</var43>
+        <var44>M42</var44>
+        <var45>M43</var45>
+        <var46>M44</var46>
+        <var47>M45</var47>
+        <var48>M46</var48>
+        <var49>M47</var49>
+        <var50>M48</var50>
+        <var51>M49</var51>
+        <var52>M50</var52>
+        <var53>M51</var53>
+        <var54>M52</var54>
+        <var55>M53</var55>
+        <var56>M54</var56>
+        <var57>M55</var57>
+        <var58>M56</var58>
+        <var59>M57</var59>
+        <var60>M58</var60>
+        <var61>M59</var61>
+        <var62>M60</var62>
+        <var63>M61</var63>
+        <var64>M62</var64>
+        <var65>M63</var65>
+        <var66>M64</var66>
+        <var67>M65</var67>
+        <var68>M66</var68>
+        <var69>M67</var69>
+        <var70>M68</var70>
+        <var71>M69</var71>
+        <var72>M70</var72>
+        <var73>M71</var73>
+        <var74>M72</var74>
+        <var75>M73</var75>
+        <var76>M74</var76>
+        <var77>M75</var77>
+        <var78>M76</var78>
+        <var79>M77</var79>
+        <var80>M78</var80>
+        <var81>M79</var81>
+        <var82>M80</var82>
+        <var83>M81</var83>
+        <var84>M82</var84>
+        <var85>M83</var85>
+        <var86>M84</var86>
+        <var87>M85</var87>
+        <var88>M86</var88>
+        <var89>M87</var89>
+        <var90>M88</var90>
+        <var91>M89</var91>
+        <var92>M90</var92>
+        <var93>M91</var93>
+        <var94>M92</var94>
+        <var95>M93</var95>
+        <var96>M94</var96>
+        <var97>M95</var97>
+        <var98>M96</var98>
+        <var99>M97</var99>
+        <var100>M98</var100>
+        <var101>M99</var101>
+        <var102>M100</var102>
+        <var103>M101</var103>
+        <var104>M102</var104>
+        <var105>M103</var105>
+        <var106>M104</var106>
+        <var107>M105</var107>
+        <var108>M106</var108>
+        <var109>M107</var109>
+        <var110>M108</var110>
+        <var111>M109</var111>
+        <var112>M110</var112>
+        <var113>M111</var113>
+        <var114>M112</var114>
+        <var115>M113</var115>
+        <var116>M114</var116>
+        <var117>M115</var117>
+        <var118>M116</var118>
+        <var119>M117</var119>
+        <var120>M118</var120>
+        <var121>M119</var121>
+        <var122>M120</var122>
+        <var123>M121</var123>
+        <var124>M122</var124>
+        <var125>M123</var125>
+        <var126>M124</var126>
+        <var127>M125</var127>
+        <var128>M126</var128>
+        <var129>M127</var129>
+        <var130>I0</var130>
+        <var131>I1</var131>
+        <var132>I2</var132>
+        <var133>I3</var133>
+        <var134>I4</var134>
+        <var135>I5</var135>
+        <var136>I6</var136>
+        <var137>I7</var137>
+        <var138>I8</var138>
+        <var139>I9</var139>
+        <var140>I10</var140>
+        <var141>I11</var141>
+        <var142>I12</var142>
+        <var143>I13</var143>
+        <var144>I14</var144>
+        <var145>I15</var145>
+        <var146>I16</var146>
+        <var147>I17</var147>
+        <var148>I18</var148>
+        <var149>I19</var149>
+        <var150>I20</var150>
+        <var151>I21</var151>
+        <var152>I22</var152>
+        <var153>I23</var153>
+        <var154>I24</var154>
+        <var155>I25</var155>
+        <var156>I26</var156>
+        <var157>I27</var157>
+        <var158>I28</var158>
+        <var159>I29</var159>
+        <var160>I30</var160>
+        <var161>I31</var161>
+        <var162>I32</var162>
+        <var163>I33</var163>
+        <var164>I34</var164>
+        <var165>I35</var165>
+        <var166>I36</var166>
+        <var167>I37</var167>
+        <var168>I38</var168>
+        <var169>I39</var169>
+        <var170>I40</var170>
+        <var171>I41</var171>
+        <var172>I42</var172>
+        <var173>I43</var173>
+        <var174>I44</var174>
+        <var175>I45</var175>
+        <var176>I46</var176>
+        <var177>I47</var177>
+        <var178>Q0</var178>
+        <var179>Q1</var179>
+        <var180>Q2</var180>
+        <var181>Q3</var181>
+        <var182>Q4</var182>
+        <var183>Q5</var183>
+        <var184>Q6</var184>
+        <var185>Q7</var185>
+        <var186>Q8</var186>
+        <var187>Q9</var187>
+        <var188>Q10</var188>
+        <var189>Q11</var189>
+        <var190>Q12</var190>
+        <var191>Q13</var191>
+        <var192>Q14</var192>
+        <var193>Q15</var193>
+        <var194>Q16</var194>
+        <var195>Q17</var195>
+        <var196>Q18</var196>
+        <var197>Q19</var197>
+        <var198>Q20</var198>
+        <var199>Q21</var199>
+        <var200>Q22</var200>
+        <var201>Q23</var201>
+        <var202>Q24</var202>
+        <var203>Q25</var203>
+        <var204>Q26</var204>
+        <var205>Q27</var205>
+        <var206>Q28</var206>
+        <var207>Q29</var207>
+        <var208>Q30</var208>
+        <var209>Q31</var209>
+        <var210>Q32</var210>
+        <var211>Q33</var211>
+        <var212>Q34</var212>
+        <var213>Q35</var213>
+        <var214>Q36</var214>
+        <var215>Q37</var215>
+        <var216>Q38</var216>
+        <var217>Q39</var217>
+        <var218>Q40</var218>
+        <var219>Q41</var219>
+        <var220>Q42</var220>
+        <var221>Q43</var221>
+        <var222>Q44</var222>
+        <var223>Q45</var223>
+        <var224>Q46</var224>
+        <var225>Q47</var225>
+        <var226>S0</var226>
+        <var227>S1</var227>
+        <var228>S2</var228>
+        <var229>S3</var229>
+        <var230>S4</var230>
+        <var231>S5</var231>
+        <var232>S6</var232>
+        <var233>S7</var233>
+        <var234>S8</var234>
+        <var235>S9</var235>
+        <var236>S10</var236>
+        <var237>S11</var237>
+        <var238>S12</var238>
+        <var239>S13</var239>
+        <var240>S14</var240>
+        <var241>S15</var241>
+        <var242>S16</var242>
+        <var243>S17</var243>
+        <var244>S18</var244>
+        <var245>S19</var245>
+        <var246>S20</var246>
+        <var247>S21</var247>
+        <var248>S22</var248>
+        <var249>S23</var249>
+        <var250>S24</var250>
+        <var251>S25</var251>
+        <var252>S26</var252>
+        <var253>S27</var253>
+        <var254>S28</var254>
+        <var255>S29</var255>
+        <var256>S30</var256>
+        <var257>S31</var257>
+        <var258>S32</var258>
+        <var259>S33</var259>
+        <var260>S34</var260>
+        <var261>S35</var261>
+        <var262>S36</var262>
+        <var263>S37</var263>
+        <var264>S38</var264>
+        <var265>S39</var265>
+        <var266>S40</var266>
+        <var267>S41</var267>
+        <var268>S42</var268>
+        <var269>S43</var269>
+        <var270>S44</var270>
+        <var271>S45</var271>
+        <var272>S46</var272>
+        <var273>S47</var273>
+        <var274>S48</var274>
+        <var275>S49</var275>
+        <var276>S50</var276>
+        <var277>S51</var277>
+        <var278>S52</var278>
+        <var279>S53</var279>
+        <var280>S54</var280>
+        <var281>S55</var281>
+        <var282>S56</var282>
+        <var283>S57</var283>
+        <var284>S58</var284>
+        <var285>S59</var285>
+        <var286>S60</var286>
+        <var287>S61</var287>
+        <var288>S62</var288>
+        <var289>S63</var289>
+        <var290>S64</var290>
+        <var291>S65</var291>
+        <var292>S66</var292>
+        <var293>S67</var293>
+        <var294>S68</var294>
+        <var295>S69</var295>
+        <var296>S70</var296>
+        <var297>S71</var297>
+        <var298>S72</var298>
+        <var299>S73</var299>
+        <var300>S74</var300>
+        <var301>S75</var301>
+        <var302>S76</var302>
+        <var303>S77</var303>
+        <var304>S78</var304>
+        <var305>S79</var305>
+        <var306>S80</var306>
+        <var307>S81</var307>
+        <var308>S82</var308>
+        <var309>S83</var309>
+        <var310>S84</var310>
+        <var311>S85</var311>
+        <var312>S86</var312>
+        <var313>S87</var313>
+        <var314>S88</var314>
+        <var315>S89</var315>
+        <var316>S90</var316>
+        <var317>S91</var317>
+        <var318>S92</var318>
+        <var319>S93</var319>
+        <var320>S94</var320>
+        <var321>S95</var321>
+        <var322>S96</var322>
+        <var323>S97</var323>
+        <var324>S98</var324>
+        <var325>S99</var325>
+        <var326>S100</var326>
+        <var327>S101</var327>
+        <var328>S102</var328>
+        <var329>S103</var329>
+        <var330>S104</var330>
+        <var331>S105</var331>
+        <var332>S106</var332>
+        <var333>S107</var333>
+        <var334>S108</var334>
+        <var335>S109</var335>
+        <var336>S110</var336>
+        <var337>S111</var337>
+        <var338>S112</var338>
+        <var339>S113</var339>
+        <var340>S114</var340>
+        <var341>S115</var341>
+        <var342>S116</var342>
+        <var343>S117</var343>
+        <var344>S118</var344>
+        <var345>S119</var345>
+        <var346>S120</var346>
+        <var347>S121</var347>
+        <var348>S122</var348>
+        <var349>S123</var349>
+        <var350>S124</var350>
+        <var351>S125</var351>
+        <var352>S126</var352>
+        <var353>S127</var353>
+        <var354>X0_t</var354>
+        <var355>MW1</var355>
+        <var356>X1_t</var356>
+        <var357>MW3</var357>
+        <var358>MW4</var358>
+        <var359>MW5</var359>
+        <var360>X2_t</var360>
+        <var361>MW7</var361>
+        <var362>Zone8_t</var362>
+        <var363>Zone1_t</var363>
+        <var364>MW10</var364>
+        <var365>MW11</var365>
+        <var366>MW12</var366>
+        <var367>MW13</var367>
+        <var368>MW14</var368>
+        <var369>MW15</var369>
+        <var370>MW16</var370>
+        <var371>MW17</var371>
+        <var372>MW18</var372>
+        <var373>MW19</var373>
+        <var374>MW20</var374>
+        <var375>MW21</var375>
+        <var376>MW22</var376>
+        <var377>MW23</var377>
+        <var378>MW24</var378>
+        <var379>MW25</var379>
+        <var380>MW26</var380>
+        <var381>MW27</var381>
+        <var382>MW28</var382>
+        <var383>MW29</var383>
+        <var384>MW30</var384>
+        <var385>MW31</var385>
+        <var386>MW32</var386>
+        <var387>MW33</var387>
+        <var388>MW34</var388>
+        <var389>MW35</var389>
+        <var390>MW36</var390>
+        <var391>MW37</var391>
+        <var392>MW38</var392>
+        <var393>MW39</var393>
+        <var394>MW40</var394>
+        <var395>MW41</var395>
+        <var396>MW42</var396>
+        <var397>MW43</var397>
+        <var398>MW44</var398>
+        <var399>MW45</var399>
+        <var400>MW46</var400>
+        <var401>MW47</var401>
+        <var402>MW48</var402>
+        <var403>MW49</var403>
+        <var404>MW50</var404>
+        <var405>MW51</var405>
+        <var406>MW52</var406>
+        <var407>MW53</var407>
+        <var408>MW54</var408>
+        <var409>MW55</var409>
+        <var410>MW56</var410>
+        <var411>MW57</var411>
+        <var412>MW58</var412>
+        <var413>MW59</var413>
+        <var414>MW60</var414>
+        <var415>MW61</var415>
+        <var416>MW62</var416>
+        <var417>MW63</var417>
+        <var418>MW64</var418>
+        <var419>MW65</var419>
+        <var420>MW66</var420>
+        <var421>MW67</var421>
+        <var422>MW68</var422>
+        <var423>MW69</var423>
+        <var424>MW70</var424>
+        <var425>MW71</var425>
+        <var426>MW72</var426>
+        <var427>MW73</var427>
+        <var428>MW74</var428>
+        <var429>MW75</var429>
+        <var430>MW76</var430>
+        <var431>MW77</var431>
+        <var432>MW78</var432>
+        <var433>MW79</var433>
+        <var434>MW80</var434>
+        <var435>MW81</var435>
+        <var436>MW82</var436>
+        <var437>MW83</var437>
+        <var438>MW84</var438>
+        <var439>MW85</var439>
+        <var440>MW86</var440>
+        <var441>MW87</var441>
+        <var442>MW88</var442>
+        <var443>MW89</var443>
+        <var444>MW90</var444>
+        <var445>MW91</var445>
+        <var446>MW92</var446>
+        <var447>MW93</var447>
+        <var448>MW94</var448>
+        <var449>MW95</var449>
+        <var450>MW96</var450>
+        <var451>MW97</var451>
+        <var452>MW98</var452>
+        <var453>MW99</var453>
+        <var454>MW100</var454>
+        <var455>MW101</var455>
+        <var456>MW102</var456>
+        <var457>MW103</var457>
+        <var458>MW104</var458>
+        <var459>MW105</var459>
+        <var460>MW106</var460>
+        <var461>MW107</var461>
+        <var462>MW108</var462>
+        <var463>MW109</var463>
+        <var464>MW110</var464>
+        <var465>MW111</var465>
+        <var466>MW112</var466>
+        <var467>MW113</var467>
+        <var468>MW114</var468>
+        <var469>MW115</var469>
+        <var470>MW116</var470>
+        <var471>MW117</var471>
+        <var472>MW118</var472>
+        <var473>MW119</var473>
+        <var474>MW120</var474>
+        <var475>MW121</var475>
+        <var476>MW122</var476>
+        <var477>MW123</var477>
+        <var478>MW124</var478>
+        <var479>MW125</var479>
+        <var480>MW126</var480>
+        <var481>MW127</var481>
+        <var482>SW0</var482>
+        <var483>SW1</var483>
+        <var484>SW2</var484>
+        <var485>SW3</var485>
+        <var486>SW4</var486>
+        <var487>SW5</var487>
+        <var488>SW6</var488>
+        <var489>SW7</var489>
+        <var490>SW8</var490>
+        <var491>SW9</var491>
+        <var492>SW10</var492>
+        <var493>SW11</var493>
+        <var494>SW12</var494>
+        <var495>SW13</var495>
+        <var496>SW14</var496>
+        <var497>SW15</var497>
+        <var498>SW16</var498>
+        <var499>SW17</var499>
+        <var500>SW18</var500>
+        <var501>SW19</var501>
+        <var502>SW20</var502>
+        <var503>SW21</var503>
+        <var504>SW22</var504>
+        <var505>SW23</var505>
+        <var506>SW24</var506>
+        <var507>SW25</var507>
+        <var508>SW26</var508>
+        <var509>SW27</var509>
+        <var510>SW28</var510>
+        <var511>SW29</var511>
+        <var512>SW30</var512>
+        <var513>SW31</var513>
+        <var514>SW32</var514>
+        <var515>SW33</var515>
+        <var516>SW34</var516>
+        <var517>SW35</var517>
+        <var518>SW36</var518>
+        <var519>SW37</var519>
+        <var520>SW38</var520>
+        <var521>SW39</var521>
+        <var522>SW40</var522>
+        <var523>SW41</var523>
+        <var524>SW42</var524>
+        <var525>SW43</var525>
+        <var526>SW44</var526>
+        <var527>SW45</var527>
+        <var528>SW46</var528>
+        <var529>SW47</var529>
+        <var530>SW48</var530>
+        <var531>SW49</var531>
+        <var532>SW50</var532>
+        <var533>SW51</var533>
+        <var534>SW52</var534>
+        <var535>SW53</var535>
+        <var536>SW54</var536>
+        <var537>SW55</var537>
+        <var538>SW56</var538>
+        <var539>SW57</var539>
+        <var540>SW58</var540>
+        <var541>SW59</var541>
+        <var542>SW60</var542>
+        <var543>SW61</var543>
+        <var544>SW62</var544>
+        <var545>SW63</var545>
+        <var546>SW64</var546>
+        <var547>SW65</var547>
+        <var548>SW66</var548>
+        <var549>SW67</var549>
+        <var550>SW68</var550>
+        <var551>SW69</var551>
+        <var552>SW70</var552>
+        <var553>SW71</var553>
+        <var554>SW72</var554>
+        <var555>SW73</var555>
+        <var556>SW74</var556>
+        <var557>SW75</var557>
+        <var558>SW76</var558>
+        <var559>SW77</var559>
+        <var560>SW78</var560>
+        <var561>SW79</var561>
+        <var562>SW80</var562>
+        <var563>SW81</var563>
+        <var564>SW82</var564>
+        <var565>SW83</var565>
+        <var566>SW84</var566>
+        <var567>SW85</var567>
+        <var568>SW86</var568>
+        <var569>SW87</var569>
+        <var570>SW88</var570>
+        <var571>SW89</var571>
+        <var572>SW90</var572>
+        <var573>SW91</var573>
+        <var574>SW92</var574>
+        <var575>SW93</var575>
+        <var576>SW94</var576>
+        <var577>SW95</var577>
+        <var578>SW96</var578>
+        <var579>SW97</var579>
+        <var580>SW98</var580>
+        <var581>SW99</var581>
+        <var582>SW100</var582>
+        <var583>SW101</var583>
+        <var584>SW102</var584>
+        <var585>SW103</var585>
+        <var586>SW104</var586>
+        <var587>SW105</var587>
+        <var588>SW106</var588>
+        <var589>SW107</var589>
+        <var590>SW108</var590>
+        <var591>SW109</var591>
+        <var592>SW110</var592>
+        <var593>SW111</var593>
+        <var594>SW112</var594>
+        <var595>SW113</var595>
+        <var596>SW114</var596>
+        <var597>SW115</var597>
+        <var598>SW116</var598>
+        <var599>SW117</var599>
+        <var600>SW118</var600>
+        <var601>SW119</var601>
+        <var602>SW120</var602>
+        <var603>SW121</var603>
+        <var604>SW122</var604>
+        <var605>SW123</var605>
+        <var606>SW124</var606>
+        <var607>SW125</var607>
+        <var608>SW126</var608>
+        <var609>SW127</var609>
+        <var610>T0</var610>
+        <var611>T1</var611>
+        <var612>T2</var612>
+        <var613>T3</var613>
+        <var614>T4</var614>
+        <var615>T5</var615>
+        <var616>T6</var616>
+        <var617>T7</var617>
+        <var618>T8</var618>
+        <var619>T9</var619>
+        <var620>T10</var620>
+        <var621>T11</var621>
+        <var622>T12</var622>
+        <var623>T13</var623>
+        <var624>T14</var624>
+        <var625>T15</var625>
+        <var626>T16</var626>
+        <var627>T17</var627>
+        <var628>T18</var628>
+        <var629>T19</var629>
+        <var630>T20</var630>
+        <var631>T21</var631>
+        <var632>T22</var632>
+        <var633>T23</var633>
+        <var634>T24</var634>
+        <var635>T25</var635>
+        <var636>T26</var636>
+        <var637>T27</var637>
+        <var638>T28</var638>
+        <var639>T29</var639>
+        <var640>T30</var640>
+        <var641>T31</var641>
+      </Vars_Names>
+    </FVariables>
+    <FIOLEDs>
+      <Props Visible="0"/>
+      <Geometry top="4" left="351" height="636" width="177"/>
+    </FIOLEDs>
+    <FLog>
+      <Props Visible="0"/>
+      <Geometry top="130" left="400" height="412" width="560"/>
+    </FLog>
+    <FormG7>
+      <Props Visible="-1"/>
+      <Geometry top="39" left="373" height="609" width="1042"/>
+    </FormG7>
+  </FAProject>
+  <G7Project>
+    <Graph>
+      <Objects>
+        <Obj Name="X0" Page="0" CellX="1" CellY="8" BarInIdx="6" BarOutIdx="1" Type="1" Flags="0">
+          <Code>~q0:=true; // só para teste
+v1:=19;
+v2:=19;
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="t0" Page="0" CellX="1" CellY="10" BarInIdx="1" BarOutIdx="2" Type="2" Flags="0">
+          <Code>~x0_T&gt;100 (* em dezenas de ms *)
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="X1" Page="0" CellX="1" CellY="12" BarInIdx="2" BarOutIdx="3" Type="1" Flags="0">
+          <Code>~q1:=true; // só para teste
+v1:=-19;
+v2:=-19;
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="t1" Page="0" CellX="1" CellY="14" BarInIdx="3" BarOutIdx="4" Type="2" Flags="0">
+          <Code>~(x1_t&gt;100) and not i0 and not i2
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="16" BarInIdx="4" BarOutIdx="-1" Type="4" Flags="2">
+          <Code>~</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="6" BarInIdx="-1" BarOutIdx="6" Type="5" Flags="0">
+          <Code>~</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="X2" Page="0" CellX="1" CellY="4" BarInIdx="7" BarOutIdx="5" Type="1" Flags="1">
+          <Code>~v1:=0;v2:=0;
+
+// MW50 conta decimos de seg
+if (S16) then   MW50:=MW50+1; end_if;
+
+if (MW50%500)=0 then
+  play("&gt;c32");
+else
+  if (MW50%100)=0 then
+    play("&lt;c32");
+  end_if;
+end_if;
+
+
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="t2" Page="0" CellX="1" CellY="6" BarInIdx="5" BarOutIdx="6" Type="2" Flags="0">
+          <Code>~i1
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Zone8" Page="0" CellX="1" CellY="0" BarInIdx="-1" BarOutIdx="-1" Type="1" Flags="0">
+          <Code>~if (S16) then
+  clear();
+  printf("%1u%1d%1u",x0,x1,x2);
+  lcd_goto_xy(0,1);
+  //printf("%02u,%02u", x0_T, x1_T);
+  printf("%04d", position);
+end_if;
+
+set_motors(v1,v2);
+
+
+
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Zone1" Page="0" CellX="0" CellY="0" BarInIdx="-1" BarOutIdx="-1" Type="1" Flags="0">
+          <Code>~if (sw0=0) then
+  calibrate();
+end_if;
+
+
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="t3" Page="0" CellX="2" CellY="14" BarInIdx="3" BarOutIdx="0" Type="2" Flags="0">
+          <Code>~i0 or i2
+</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Jump1" Page="0" CellX="2" CellY="16" BarInIdx="0" BarOutIdx="-1" Type="4" Flags="2">
+          <Code>~</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Jump1" Page="0" CellX="2" CellY="2" BarInIdx="-1" BarOutIdx="7" Type="5" Flags="0">
+          <Code>~</Code>
+          <Text></Text>
+        </Obj>
+        <Obj Name="Comment0" Page="0" CellX="0" CellY="4" BarInIdx="-1" BarOutIdx="-1" Type="3" Flags="0">
+          <Code>~</Code>
+          <Text>(C) FEUPAUtom + FEUP + asousa@fe.up.pt</Text>
+        </Obj>
+      </Objects>
+    </Graph>
+  </G7Project>
+</FEUPAutom>

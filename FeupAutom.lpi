@@ -28,8 +28,8 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="5"/>
-      <MinorVersionNr Value="51"/>
-      <BuildNr Value="159"/>
+      <MinorVersionNr Value="52"/>
+      <BuildNr Value="167"/>
       <StringTable CompanyName="FEUP" ProductName="FEUPAutom" ProductVersion="5.51"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -39,9 +39,16 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
+      <local>
+        <CommandLineParams Value="-D D:\ajs\Temp\FA5   -L1"/>
+      </local>
       <FormatVersion Value="2"/>
       <Modes Count="1">
-        <Mode0 Name="default"/>
+        <Mode0 Name="default">
+          <local>
+            <CommandLineParams Value="-D D:\ajs\Temp\FA5   -L1"/>
+          </local>
+        </Mode0>
       </Modes>
     </RunParams>
     <RequiredPackages Count="8">
@@ -178,11 +185,6 @@
         <TrashVariables Value="True"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
-      <Options>
-        <Win32>
-          <GraphicApplication Value="True"/>
-        </Win32>
-      </Options>
     </Linking>
     <Other>
       <CustomOptions Value="-dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL"/>

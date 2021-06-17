@@ -9,7 +9,7 @@ uses
   {$IFDEF Windows}
     Windows,
   {$ENDIF}
-  Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Messages, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, Menus, math, Grids, inifiles,ExtCtrls, Buttons, ComCtrls,
 
   lclintf{Open URL},
@@ -53,7 +53,7 @@ const cmwData=$FFFFFFFF;
       crlf=#13+#10;
 
 
-var VersionString : string ='FEUPAutom - 32b/64b-  ';  // Also see begin
+var VersionString : string ='FEUPAutom 64b-  ';  // Also see begin
 
 FUNCTION resourceVersionInfo: STRING;
 
@@ -430,8 +430,8 @@ implementation
 
 uses Variables, IOLeds, MMTimer, ProjManage,
      Logger, Splash, G7Draw, Pas2C, ModBus_Utils,
-     resource, versiontypes, versionresource, lCommon, strutils,
-     character;
+     resource, versiontypes, versionresource, lCommon, StrUtils,
+     character, SysUtils, LCLProc;
 
 {$R *.lfm}
 
@@ -2032,6 +2032,29 @@ begin
 
 end;
 
+
+function GetFirstFA5File(const DirName : String) : string;
+Var Info : TSearchRec;
+//    Count : Longint;
+Begin
+//    Count:=0;
+    result:='';
+    If FindFirst (DirName+'\*.FA5',faNormal,Info)=0 then  begin
+      //Repeat
+        result:=Info.Name;
+        //Inc(Count);
+        //With Info do begin
+        //  If (Attr and faDirectory) = faDirectory then
+        //    Write('Dir : ');
+        //  Writeln (Name:40,Size:15);
+        //  end;
+      //Until FindNext(info)<>0;
+      FindClose(Info);
+    end;
+end;
+
+
+
 procedure TFMain.FormShow(Sender: TObject);
 begin
 
@@ -2062,9 +2085,21 @@ begin
     if UpperCase(ParamStr(1))='-R' then begin
       TimerStartParam.Enabled:=True;
       Project.FileName:=ParamStr(2);
-    end else begin
-      Project.FileName:=ParamStr(1);
-    end;
+    end else
+    if UpperCase(ParamStr(1))='-D' then begin
+          // change 2021 May:
+          // -D directory will run the first *.FA5 of the directory given as argument
+          TimerStartParam.Enabled:=True;
+          if DirectoryExists(ParamStr(2)) then begin
+            TimerStartParam.Enabled:=True;
+            Project.FileName := ParamStr(2)+'\'+GetFirstFA5File(ParamStr(2));
+            if Project.FileName = '' then Project.FileName := 'Untitled';
+          end;
+     end else begin
+        Project.FileName:=ParamStr(1);
+      end;
+      // -T and -L are verified at    TimerStartParamTimer
+
   end;
   if Project.FileName='Untitled' then begin
     ProjectNew;
@@ -2280,8 +2315,8 @@ begin
   SynCompletion.ItemList.Add('xor');
   SynCompletion.ItemList.Add('re');
   SynCompletion.ItemList.Add('fe');
-  SynCompletion.ItemList.Add('PageStart(');
-  SynCompletion.ItemList.Add('PageClear(');
+  SynCompletion.ItemList.Add('PageStart');
+  SynCompletion.ItemList.Add('PageClear');
 
 
   //SynAnySyn_ST.Objects.Clear;
@@ -2696,23 +2731,26 @@ begin
 end;
 
 procedure TFMain.TimerStartParamTimer(Sender: TObject);
+var
+        s : String;
+        i : integer;
 begin
   TimerStartParam.Enabled:=False;
   CBWinMessages.Checked:=false;
   Application.ProcessMessages;
   sleep(5);
-  EditPeriodMiliSec.Text := '60';
+  //EditPeriodMiliSec.Text := '39';
   if UpperCase(copy(ParamStr(ParamCount),1,2))='-T' then begin
     EditPeriodMiliSec.Text := copy(ParamStr(ParamCount),3,3);
   end;
   CBModBus.Checked  := true;
   EditMBIP.Text     := '127.0.0.1';
   EditMBOffs_I.Text := '0';
-  EditMBOffs_O.Text := '64';
+  EditMBOffs_O.Text := '0';
   EditMBNRead.Text  := '24';
   EditMBNWrite.Text := '24';
-  RGMBReadFunc.ItemIndex   := 0;
-  RGMBWriteFunc1.ItemIndex := 0;
+  //RGMBReadFunc.ItemIndex   := 0;
+  //RGMBWriteFunc1.ItemIndex := 0;
   Application.ProcessMessages;
   Sleep(5);
   Application.ProcessMessages;
@@ -2720,8 +2758,34 @@ begin
   Application.ProcessMessages;
   Sleep(5);
   Application.ProcessMessages;
-  //FormG7.BIniRunClick(nil); // Compila o Grafcet ou corre o ST
-  BIniRunClick(nil);   // corre o ST
+  //if Project.Grafcet then FormG7.BIniRunClick(nil); // Compila e executa o Grafcet
+  if Project.Grafcet then FormG7.GenSTCode(False);   // Compila o Grafcet não interativo
+  if ParamCount>2 then if UpperCase(copy(ParamStr(3),1,2))='-L' then begin
+    s := copy(ParamStr(3),3,3);
+    if s = '' then s:='1';
+    if (s[1]>='0') and (s[1]<='9') then begin
+      SynEditST.Lines[0] := ' LIMIT := ' + s +'; (* -L *) ';
+      Sleep(5);
+      Application.ProcessMessages;
+    end;
+  end;
+
+
+  // Run ST Code
+  FMain.BIniRunClick(nil);   // corre o ST
+
+  Application.ProcessMessages;
+  Sleep(5);
+  Application.ProcessMessages;
+  Sleep(5);
+  Application.ProcessMessages;
+  //ShowMessage('err='+FMain.LBErrors.Items.Text);
+
+  if (LBErrors.Items.Count>0) then begin
+    for i:=0 to LBErrors.Items.Count-1 do
+      if copy(FMain.LBErrors.Items[i],1,2)='[E' then
+        WriteLn(StdErr,FMain.LBErrors.Items[i]);
+  end;
   Application.ProcessMessages;
   Sleep(5);
   Application.ProcessMessages;
@@ -3111,7 +3175,10 @@ initialization
   StartUp     := True;
   RunTimeBomb := True;
   AVRStuffPath:=ExtractFilePath(Application.ExeName)+'avrgcc\';
-  VersionString:=VersionString + resourceVersionInfo + ' - ';
+  VersionString:=VersionString +' ' + resourceVersionInfo;
+  //DebugLn(VersionString);    //DebugLn() from LCLProc unit.
+  writeLn(VersionString);    // Project Options --> Config and Target --> Win 32 GUI
+  VersionString:=VersionString + ' - ';
 end.
 
 

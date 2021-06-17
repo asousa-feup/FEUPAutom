@@ -4579,7 +4579,7 @@ begin
 
   if FormSelfGrade.CBSelfGradingRunning.Checked then InteratctiveMode:=False;
 
-  WarnNoIniStep:=True;
+  WarnNoIniStep:=InteratctiveMode;
 
   CompilGr7 := G7Compile();
 

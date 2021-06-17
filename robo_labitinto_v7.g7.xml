@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <G7Project>
+    <Graph>
+      <Objects>
+        <Obj Name="X1" Page="0" CellX="1" CellY="4" BarInIdx="0" BarOutIdx="1" Type="1" Flags="1">
+          <Code>
+            set_motors(0,0);<br/>state := 0;
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t0" Page="0" CellX="1" CellY="6" BarInIdx="1" BarOutIdx="2" Type="2" Flags="0">
+          <Code>
+            bt_a
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="X2" Page="0" CellX="1" CellY="8" BarInIdx="2" BarOutIdx="3" Type="1" Flags="0">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t1" Page="0" CellX="1" CellY="10" BarInIdx="3" BarOutIdx="4" Type="2" Flags="0">
+          <Code>
+            (bt_a = false)
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="24" BarInIdx="8" BarOutIdx="-1" Type="4" Flags="2">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="2" BarInIdx="-1" BarOutIdx="0" Type="5" Flags="0">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Zone8" Page="0" CellX="0" CellY="0" BarInIdx="-1" BarOutIdx="-1" Type="1" Flags="0">
+          <Code>
+            if ((sw0 % 50)=0) then<br/>clear();<br/>printf(&quot;%d&quot;, state);<br/>lcd_goto_xy(0,1);<br/>printf(&quot;%d%d%d%d%d&quot;, l0,l1,l2,l3,l4);<br/>end_if;
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Zone1" Page="0" CellX="1" CellY="0" BarInIdx="-1" BarOutIdx="-1" Type="1" Flags="0">
+          <Code>
+            TRESHOLD_MAX := 800;<br/>TRESHOLD_MIN := 150;
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="X5" Page="0" CellX="1" CellY="12" BarInIdx="4" BarOutIdx="5" Type="1" Flags="0">
+          <Code>
+            calibrate();
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t3" Page="0" CellX="1" CellY="14" BarInIdx="5" BarOutIdx="6" Type="2" Flags="0">
+          <Code>
+            true
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="X6" Page="0" CellX="1" CellY="20" BarInIdx="9" BarOutIdx="7" Type="1" Flags="0">
+          <Code>
+            //delay(1);<br/>if ((state = 0) and ( (sensors[2] &gt; TRESHOLD_MAX) or (sensors[1] &gt; TRESHOLD_MAX) or (sensors[3] &gt; TRESHOLD_MAX)) and ((sensors[0] &gt; TRESHOLD_MAX) or (sensors[4] &gt; TRESHOLD_MAX)) ) then//segue linha ate<br/>// millis_1 = get_millis();<br/>l0 := false;<br/>l1 := false;<br/>l2 := false;<br/>l3 := false;<br/>l4 := false;<br/>millis_1 := millis();<br/>state := 1;<br/>//state := 0;<br/>elsif ( (state = 0) and (sensors[0] &lt; TRESHOLD_MIN) and (sensors[1] &lt; TRESHOLD_MIN) and (sensors[2] &lt; TRESHOLD_MIN) and (sensors[3] &lt; TRESHOLD_MIN) and (sensors[4] &lt; TRESHOLD_MIN) ) then//ficou sem linha<br/>state := 13;                                                                                                                                 <br/>elsif ( (state = 13) and (sensors[1] &gt; TRESHOLD_MAX) ) then //fim de linha - vira ate reencontrar a linha<br/>state := 0;<br/><br/>elsif ( (state = 1) and (sensors[4] &lt; TRESHOLD_MIN) and (sensors[0] &lt; TRESHOLD_MIN) ) then //anda devagar<br/>//set_motors(0,0);<br/>millis_4 := millis();<br/>state := 40;<br/>elsif ( (state = 40) and (millis() &gt; (millis_4 + 100)) ) then //danda 200 ms em frente<br/>state := 4;<br/>//state := 2;<br/>(*<br/>elsif ( (state = 2) and (sensors[4] &gt; TRESHOLD) and (sensors[0] &gt; TRESHOLD) ) then //anda para a frente<br/>state := 3;<br/>elsif ( (state = 3) and (sensors[4] &lt; TRESHOLD) and (sensors[0] &lt; TRESHOLD) ) then //anda para a frente<br/>set_motors(0,0);<br/>state := 4;<br/>*)<br/>elsif ( (state = 1) and (millis() &gt; (millis_1 + 350)) and (sensors[0] &gt; TRESHOLD_MAX) and (sensors[1] &gt; TRESHOLD_MAX) and (sensors[2] &gt; TRESHOLD_MAX) and (sensors[3] &gt; TRESHOLD_MAX) and (sensors[4] &gt; TRESHOLD_MAX) ) then //vai em frente<br/>set_motors(0,0);<br/>millis_100 := millis();<br/>play_from_program_space(lobat);<br/>state := 100;//fim<br/><br/>elsif( (state = 100) and (millis() &gt; (millis_100 + 200)) ) then<br/>state := 101;//fim<br/><br/>elsif ( (state = 4) and (l0 = true) and (l1 = true) ) then //vira a esquerda<br/>state := 5;<br/>elsif ( (state = 5) and (sensors[0] &gt; TRESHOLD_MAX) ) then //vira a esquerda - roda 90º<br/>state := 20;<br/>elsif ( (state = 20) and (sensors[1] &gt; TRESHOLD_MAX) ) then //vira a esquerda - roda 90º<br/>state := 21;<br/>elsif ( (state = 21) and (sensors[2] &gt; TRESHOLD_MAX) ) then //vira a esquerda - roda 90º<br/>state := 22;<br/>elsif ( (state = 22) and (sensors[3] &gt; TRESHOLD_MAX) ) then //vira a esquerda - roda 90º<br/>state := 0;<br/>//<br/>//state := 10;<br/>elsif (   (state = 4) and ( (sensors[2] &gt; TRESHOLD_MAX) or (sensors[1] &gt; TRESHOLD_MAX) or (sensors[3] &gt; TRESHOLD_MAX))    ) then //vai em frente<br/>state := 6;<br/>millis_6 := millis();<br/>elsif ( (state = 6) and (millis() &gt; (millis_6 + 200)) ) then // --<br/>state := 0;<br/><br/>elsif ( (state = 4) and (l3 = true) and (l4 = true) ) then //vira a direita<br/>state := 7;<br/>elsif ( (state = 7) and (sensors[4] &gt; TRESHOLD_MAX) ) then //vira a direita 90º<br/>state := 30;<br/>elsif ( (state = 30) and (sensors[3] &gt; TRESHOLD_MAX) ) then //vira a direita 90º<br/>state := 31;<br/>elsif ( (state = 31) and (sensors[2] &gt; TRESHOLD_MAX) ) then //vira a direita 90º<br/>state := 32;<br/>elsif ( (state = 32) and (sensors[2] &gt; TRESHOLD_MAX) ) then //vira a direita 90º<br/>state := 0;<br/>end_if;<br/><br/><br/>//outputs<br/>if (state = 0) then//segue linha<br/>//v := 160 - 0.03 * abs(2000.0 - position);<br/>//w := -0.05 * (2000.0 - position);<br/>v := 50 - 0.01 * abs(2000.0 - position);<br/>w := -0.02 * (2000.0 - position);<br/>v1 := v + w;<br/>v2 := v - w;<br/>if (v1 &gt;255) then v1:= 255; end_if;<br/>if (v1&lt;-255) then v1:=-255; end_if;<br/>if (v2 &gt;255) then v2:= 255; end_if;<br/>if (v2&lt;-255) then v2:=-255; end_if;<br/>set_motors(v1, v2);<br/><br/>elsif(state = 1) then// encontrou cruzamento, anda devagar<br/>set_motors(50, 50);<br/>if (sensors[0] &gt; TRESHOLD_MIN) then<br/>l0 := true;<br/>end_if;<br/>if (sensors[1] &gt; TRESHOLD_MIN) then<br/>l1 := true;<br/>end_if;<br/>if (sensors[2] &gt; TRESHOLD_MIN) then<br/>l2 := true;<br/>end_if;<br/>if (sensors[3] &gt; TRESHOLD_MIN) then<br/>l3 := true;<br/>end_if;<br/>if (sensors[4] &gt; TRESHOLD_MIN) then<br/>l4 := true;<br/>end_if;<br/>(*<br/>elsif((state = 2) or (state = 3)) then<br/>set_motors(15, 15);<br/>if (sensors[0] &gt; TRESHOLD) then<br/>l0 := true;<br/>end_if;<br/>if (sensors[1] &gt; TRESHOLD) then<br/>l1 := true;<br/>end_if;<br/>if (sensors[2] &gt; TRESHOLD) then<br/>l2 := true;<br/>end_if;<br/>if (sensors[3] &gt; TRESHOLD) then<br/>l3 := true;<br/>end_if;<br/>if (sensors[4] &gt; TRESHOLD) then<br/>l4 := true;<br/>end_if;<br/>*)<br/>elsif ( (state = 4) or (state = 6) or (state = 40) ) then<br/>set_motors(50,50);<br/>elsif ( (state = 5) or (state = 20) or (state = 21) or (state = 22) ) then<br/>set_motors(-50,50);<br/>elsif (state = 6) then<br/>set_motors(50,50);<br/>delay(200);<br/>elsif ( (state = 7) or (state = 30) or (state = 31) or (state = 32) ) then<br/>set_motors(50,-50);<br/><br/>elsif (state = 13) then //fim de linha, roda 180<br/>set_motors(50,-50);<br/>end_if;
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t4" Page="0" CellX="1" CellY="22" BarInIdx="7" BarOutIdx="8" Type="2" Flags="0">
+          <Code>
+            bt_c
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="X7" Page="0" CellX="1" CellY="16" BarInIdx="6" BarOutIdx="10" Type="1" Flags="0">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t5" Page="0" CellX="1" CellY="18" BarInIdx="10" BarOutIdx="9" Type="2" Flags="0">
+          <Code>
+            bt_a
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+      </Objects>
+    </Graph>
+  </G7Project>

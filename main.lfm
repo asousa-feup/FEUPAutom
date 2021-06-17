@@ -130,20 +130,20 @@ object FMain: TFMain
   LCLVersion = '2.0.10.0'
   object PageControl: TPageControl
     Left = 6
-    Height = 476
+    Height = 456
     Top = 8
     Width = 698
-    ActivePage = TabST
+    ActivePage = TabProject
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     ParentFont = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     object TabProject: TTabSheet
       Caption = 'Project'
-      ClientHeight = 450
+      ClientHeight = 430
       ClientWidth = 690
       Font.Color = clWindowText
       Font.Height = -11
@@ -3066,7 +3066,7 @@ object FMain: TFMain
   object EditMsgdebug: TEdit
     Left = 437
     Height = 18
-    Top = 500
+    Top = 480
     Width = 137
     Anchors = [akRight, akBottom]
     AutoSize = False
@@ -3079,7 +3079,7 @@ object FMain: TFMain
   object EditDebug: TEdit
     Left = 581
     Height = 18
-    Top = 500
+    Top = 480
     Width = 116
     Anchors = [akRight, akBottom]
     AutoSize = False
@@ -3357,7 +3357,7 @@ object FMain: TFMain
   object LabelInspect: TLabel
     Left = 284
     Height = 13
-    Top = 498
+    Top = 478
     Width = 61
     Anchors = [akLeft, akBottom]
     Caption = 'LabelInspect'
@@ -3371,7 +3371,7 @@ object FMain: TFMain
   object EditAnimation: TEdit
     Left = 404
     Height = 21
-    Top = 498
+    Top = 478
     Width = 27
     Anchors = [akRight, akBottom]
     Enabled = False
@@ -3385,7 +3385,7 @@ object FMain: TFMain
   object LabelCLangErr: TLabel
     Left = 8
     Height = 13
-    Top = 502
+    Top = 482
     Width = 83
     Anchors = [akLeft, akBottom]
     Caption = 'C Language Error'
@@ -3402,7 +3402,7 @@ object FMain: TFMain
   object LabelWarnObsoleteSt: TLabel
     Left = 8
     Height = 13
-    Top = 488
+    Top = 468
     Width = 246
     Anchors = [akLeft, akBottom]
     Caption = 'Warning: Running Obsolete ST (Grafcet changed...)'
@@ -3699,7 +3699,7 @@ object FMain: TFMain
     CompilerMode = pcmDelphi
     NestedComments = False
     Left = 128
-    Top = 56
+    Top = 40
   end
   object SaveDialog: TSaveDialog
     Title = 'Save FEUPAutom Project'
@@ -3760,10 +3760,10 @@ object FMain: TFMain
   end
   object TimerRunTimeBomb: TTimer
     Enabled = False
-    Interval = 600000
+    Interval = 900000
     OnTimer = TimerRunTimeBombTimer
-    Left = 536
-    Top = 448
+    Left = 199
+    Top = 344
   end
   object SynCompletion: TSynCompletion
     ItemList.Strings = (
@@ -3782,7 +3782,7 @@ object FMain: TFMain
     Editor = SynEditST
     ToggleReplaceWhole = False
     Left = 224
-    Top = 56
+    Top = 40
   end
   object PSScript1: TPSScript
     CompilerOptions = []
@@ -3796,8 +3796,8 @@ object FMain: TFMain
   object FA_Timer: TTimer
     Interval = 39
     OnTimer = FA_TimerTimer
-    Left = 432
-    Top = 448
+    Left = 32
+    Top = 336
   end
   object SynAnySyn_ST: TSynAnySyn
     Enabled = False
@@ -3826,6 +3826,8 @@ object FMain: TFMain
       'MOD'
       'NOT'
       'OR'
+      'PAGECLEAR'
+      'PAGESTART'
       'RE'
       'REPEAT'
       'START'

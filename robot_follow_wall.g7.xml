@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <G7Project>
+    <Graph>
+      <Objects>
+        <Obj Name="X1" Page="0" CellX="1" CellY="4" BarInIdx="0" BarOutIdx="1" Type="1" Flags="1">
+          <Code>
+            set_motors(0, 0);
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t0" Page="0" CellX="1" CellY="6" BarInIdx="1" BarOutIdx="2" Type="2" Flags="0">
+          <Code>
+            i1
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="X2" Page="0" CellX="1" CellY="8" BarInIdx="2" BarOutIdx="3" Type="1" Flags="0">
+          <Code>
+            position := read_trimpot();<br/>v := 40;<br/>w := -0.1 * (300.0 - position);<br/>v1 := v + w;<br/>v2 := v - w;<br/><br/>set_motors(v1, v2);
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="t1" Page="0" CellX="1" CellY="10" BarInIdx="3" BarOutIdx="4" Type="2" Flags="0">
+          <Code>
+            i0 or i2
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="12" BarInIdx="4" BarOutIdx="-1" Type="4" Flags="2">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Jump0" Page="0" CellX="0" CellY="2" BarInIdx="-1" BarOutIdx="0" Type="5" Flags="0">
+          <Code>
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+        <Obj Name="Zone8" Page="0" CellX="0" CellY="0" BarInIdx="-1" BarOutIdx="-1" Type="1" Flags="0">
+          <Code>
+            if ((sw0 % 50)=0) then<br/>//lcd_goto_xy(0,1);<br/>clear();<br/>printf(&quot;%3d %3d&quot;,v1,v2);<br/>lcd_goto_xy(0,1);<br/>//printf(&quot;%4d %d %d&quot;, position, X1, X2);<br/>print_long(position);<br/>end_if;
+          </Code>
+          <Text>
+          </Text>
+        </Obj>
+      </Objects>
+    </Graph>
+  </G7Project>

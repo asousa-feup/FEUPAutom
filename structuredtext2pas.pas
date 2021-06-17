@@ -337,6 +337,9 @@ begin
 end;
 
 
+var
+    VarSearchTableSL : TStringList;
+
 
 
 function SearchVarInSGVars(const VarName:string) : integer;
@@ -354,6 +357,8 @@ begin
   //    exit;
   //  end;
   //end;
+
+  //VarSearchTableSL.FindB;
 
   if Length(VarSearchTable)=0 then begin
     SetLength(VarSearchTable,FVariables.SGVars.RowCount+2);
