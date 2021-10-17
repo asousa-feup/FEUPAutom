@@ -1,9 +1,23 @@
 # FEUPAutom
 SoftPLC programmable in Grafcet and ST
 
+## What is it
+FEUPAutom is a soft PLC, mainly used in FEUP's classes up to year 2021.
+
+## Features
+The SoftPLC is programmable in ST and " Grafcet ", that " Grafcet " is compiled into ST by the synchronous compilation method.
+The " Grafcet " is not far form IEC 60848 and there is a visual editor, including highlighting active steps.
+The SoftPLC is made to work well in old computers.
+FEUPAutom includes hierarchical control within the grafcet but that 
+FEUPAutom communicates via ModBustTCP with targets.
+It features Time Traces, debug (single run, hover to inspect variable), etc.
 
 
-##Licence
+## Language
+It is written in FPC/Lazarus.
+
+
+## Licence
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
