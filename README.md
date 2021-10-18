@@ -12,6 +12,12 @@ FEUPAutom includes hierarchical control within the grafcet but that
 FEUPAutom communicates via ModBustTCP with targets.
 It features Time Traces, debug (single run, hover to inspect variable), etc.
 
+## Known Issues
+
+- Freezing a grafcet is normally quick but foricing a page is ultra slow (half a second).
+- Only the first ST timer works - but all grafcet steps have timers!
+- Timing is not very acurate...
+
 
 ## Language
 It is written in FPC/Lazarus.
